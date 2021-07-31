@@ -12,7 +12,7 @@ with open(path.join(here, 'README.md'), encoding='utf-8') as f:
 
 exec(open('timm/version.py').read())
 setup(
-    name='timm',
+    name='timm_new',
     version=__version__,
     description='(Unofficial) PyTorch Image Models',
     long_description=long_description,
