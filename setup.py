@@ -10,7 +10,7 @@ here = path.abspath(path.dirname(__file__))
 with open(path.join(here, 'README.md'), encoding='utf-8') as f:
     long_description = f.read()
 
-exec(open('timm_new/version.py').read())
+exec(open('timm/version.py').read())
 setup(
     name='timm_new',
     version=__version__,
