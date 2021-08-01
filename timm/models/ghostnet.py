@@ -12,7 +12,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 
-from timm.data import IMAGENET_DEFAULT_MEAN, IMAGENET_DEFAULT_STD
+from timm_new.data import IMAGENET_DEFAULT_MEAN, IMAGENET_DEFAULT_STD
 from .layers import SelectAdaptivePool2d, Linear, make_divisible
 from .efficientnet_blocks import SqueezeExcite, ConvBnAct
 from .helpers import build_model_with_cfg
@@ -96,7 +96,7 @@ class GhostBottleneck(nn.Module):
 
         # Point-wise linear projection
         self.ghost2 = GhostModule(mid_chs, out_chs, relu=False)
-        
+
         # shortcut
         if in_chs == out_chs and self.stride == 1:
             self.shortcut = nn.Sequential()
@@ -127,7 +127,7 @@ class GhostBottleneck(nn.Module):
 
         # 2nd ghost bottleneck
         x = self.ghost2(x)
-        
+
         x += self.shortcut(shortcut)
         return x
 
@@ -173,8 +173,8 @@ class GhostNet(nn.Module):
         out_chs = make_divisible(exp_size * width, 4)
         stages.append(nn.Sequential(ConvBnAct(prev_chs, out_chs, 1)))
         self.pool_dim = prev_chs = out_chs
-        
-        self.blocks = nn.Sequential(*stages)        
+
+        self.blocks = nn.Sequential(*stages)
 
         # building last several layers
         self.num_features = out_chs = 1280
@@ -218,7 +218,7 @@ def _create_ghostnet(variant, width=1.0, pretrained=False, **kwargs):
     Constructs a GhostNet model
     """
     cfgs = [
-        # k, t, c, SE, s 
+        # k, t, c, SE, s
         # stage1
         [[3,  16,  16, 0, 1]],
         # stage2

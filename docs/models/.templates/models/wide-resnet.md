@@ -6,7 +6,7 @@
 
 ## How do I train this model?
 
-You can follow the [timm recipe scripts](https://rwightman.github.io/pytorch-image-models/scripts/) for training a new model afresh.
+You can follow the [timm_new recipe scripts](https://rwightman.github.io/pytorch-image-models/scripts/) for training a new model afresh.
 
 ## Citation
 
@@ -59,7 +59,7 @@ Models:
     Crop Pct: '0.875'
     Image Size: '224'
     Interpolation: bilinear
-  Code: https://github.com/rwightman/pytorch-image-models/blob/5f9aff395c224492e9e44248b15f44b5cc095d9c/timm/models/resnet.py#L802
+  Code: https://github.com/rwightman/pytorch-image-models/blob/5f9aff395c224492e9e44248b15f44b5cc095d9c/timm_new/models/resnet.py#L802
   Weights: https://download.pytorch.org/models/wide_resnet101_2-32ee1156.pth
   Results:
   - Task: Image Classification
@@ -91,7 +91,7 @@ Models:
     Crop Pct: '0.875'
     Image Size: '224'
     Interpolation: bicubic
-  Code: https://github.com/rwightman/pytorch-image-models/blob/5f9aff395c224492e9e44248b15f44b5cc095d9c/timm/models/resnet.py#L790
+  Code: https://github.com/rwightman/pytorch-image-models/blob/5f9aff395c224492e9e44248b15f44b5cc095d9c/timm_new/models/resnet.py#L790
   Weights: https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/wide_resnet50_racm-8234f177.pth
   Results:
   - Task: Image Classification

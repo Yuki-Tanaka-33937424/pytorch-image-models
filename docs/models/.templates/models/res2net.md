@@ -6,7 +6,7 @@
 
 ## How do I train this model?
 
-You can follow the [timm recipe scripts](https://rwightman.github.io/pytorch-image-models/scripts/) for training a new model afresh.
+You can follow the [timm_new recipe scripts](https://rwightman.github.io/pytorch-image-models/scripts/) for training a new model afresh.
 
 ## Citation
 
@@ -64,7 +64,7 @@ Models:
     Image Size: '224'
     Weight Decay: 0.0001
     Interpolation: bilinear
-  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm/models/res2net.py#L152
+  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm_new/models/res2net.py#L152
   Weights: https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-res2net/res2net101_26w_4s-02a759a1.pth
   Results:
   - Task: Image Classification
@@ -101,7 +101,7 @@ Models:
     Image Size: '224'
     Weight Decay: 0.0001
     Interpolation: bilinear
-  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm/models/res2net.py#L196
+  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm_new/models/res2net.py#L196
   Weights: https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-res2net/res2net50_14w_8s-6527dddc.pth
   Results:
   - Task: Image Classification
@@ -138,7 +138,7 @@ Models:
     Image Size: '224'
     Weight Decay: 0.0001
     Interpolation: bilinear
-  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm/models/res2net.py#L141
+  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm_new/models/res2net.py#L141
   Weights: https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-res2net/res2net50_26w_4s-06e79181.pth
   Results:
   - Task: Image Classification
@@ -175,7 +175,7 @@ Models:
     Image Size: '224'
     Weight Decay: 0.0001
     Interpolation: bilinear
-  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm/models/res2net.py#L163
+  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm_new/models/res2net.py#L163
   Weights: https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-res2net/res2net50_26w_6s-19041792.pth
   Results:
   - Task: Image Classification
@@ -212,7 +212,7 @@ Models:
     Image Size: '224'
     Weight Decay: 0.0001
     Interpolation: bilinear
-  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm/models/res2net.py#L174
+  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm_new/models/res2net.py#L174
   Weights: https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-res2net/res2net50_26w_8s-2c7c9f12.pth
   Results:
   - Task: Image Classification
@@ -249,7 +249,7 @@ Models:
     Image Size: '224'
     Weight Decay: 0.0001
     Interpolation: bilinear
-  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm/models/res2net.py#L185
+  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm_new/models/res2net.py#L185
   Weights: https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-res2net/res2net50_48w_2s-afed724a.pth
   Results:
   - Task: Image Classification

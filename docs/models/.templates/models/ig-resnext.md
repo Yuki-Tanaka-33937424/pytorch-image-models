@@ -1,8 +1,8 @@
 # Instagram ResNeXt WSL
 
-A **ResNeXt** repeats a [building block](https://paperswithcode.com/method/resnext-block) that aggregates a set of transformations with the same topology. Compared to a [ResNet](https://paperswithcode.com/method/resnet), it exposes a new dimension,  *cardinality* (the size of the set of transformations) $C$, as an essential factor in addition to the dimensions of depth and width. 
+A **ResNeXt** repeats a [building block](https://paperswithcode.com/method/resnext-block) that aggregates a set of transformations with the same topology. Compared to a [ResNet](https://paperswithcode.com/method/resnet), it exposes a new dimension,  *cardinality* (the size of the set of transformations) $C$, as an essential factor in addition to the dimensions of depth and width.
 
-This model was trained on billions of Instagram images using thousands of distinct hashtags as labels exhibit excellent transfer learning performance. 
+This model was trained on billions of Instagram images using thousands of distinct hashtags as labels exhibit excellent transfer learning performance.
 
 Please note the CC-BY-NC 4.0 license on theses weights, non-commercial use only.
 
@@ -10,13 +10,13 @@ Please note the CC-BY-NC 4.0 license on theses weights, non-commercial use only.
 
 ## How do I train this model?
 
-You can follow the [timm recipe scripts](https://rwightman.github.io/pytorch-image-models/scripts/) for training a new model afresh.
+You can follow the [timm_new recipe scripts](https://rwightman.github.io/pytorch-image-models/scripts/) for training a new model afresh.
 
 ## Citation
 
 ```BibTeX
 @misc{mahajan2018exploring,
-      title={Exploring the Limits of Weakly Supervised Pretraining}, 
+      title={Exploring the Limits of Weakly Supervised Pretraining},
       author={Dhruv Mahajan and Ross Girshick and Vignesh Ramanathan and Kaiming He and Manohar Paluri and Yixuan Li and Ashwin Bharambe and Laurens van der Maaten},
       year={2018},
       eprint={1805.00932},
@@ -68,7 +68,7 @@ Models:
     Image Size: '224'
     Weight Decay: 0.001
     Interpolation: bilinear
-  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm/models/resnet.py#L874
+  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm_new/models/resnet.py#L874
   Weights: https://download.pytorch.org/models/ig_resnext101_32x16-c6f796b0.pth
   Results:
   - Task: Image Classification
@@ -112,7 +112,7 @@ Models:
     Weight Decay: 0.001
     Interpolation: bilinear
     Minibatch Size: 8064
-  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm/models/resnet.py#L885
+  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm_new/models/resnet.py#L885
   Weights: https://download.pytorch.org/models/ig_resnext101_32x32-e4b90b00.pth
   Results:
   - Task: Image Classification
@@ -155,7 +155,7 @@ Models:
     Image Size: '224'
     Weight Decay: 0.001
     Interpolation: bilinear
-  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm/models/resnet.py#L896
+  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm_new/models/resnet.py#L896
   Weights: https://download.pytorch.org/models/ig_resnext101_32x48-3e41cc8a.pth
   Results:
   - Task: Image Classification
@@ -198,7 +198,7 @@ Models:
     Image Size: '224'
     Weight Decay: 0.001
     Interpolation: bilinear
-  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm/models/resnet.py#L863
+  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm_new/models/resnet.py#L863
   Weights: https://download.pytorch.org/models/ig_resnext101_32x8-c38310e5.pth
   Results:
   - Task: Image Classification

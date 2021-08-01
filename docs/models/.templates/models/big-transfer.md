@@ -6,13 +6,13 @@
 
 ## How do I train this model?
 
-You can follow the [timm recipe scripts](https://rwightman.github.io/pytorch-image-models/scripts/) for training a new model afresh.
+You can follow the [timm_new recipe scripts](https://rwightman.github.io/pytorch-image-models/scripts/) for training a new model afresh.
 
 ## Citation
 
 ```BibTeX
 @misc{kolesnikov2020big,
-      title={Big Transfer (BiT): General Visual Representation Learning}, 
+      title={Big Transfer (BiT): General Visual Representation Learning},
       author={Alexander Kolesnikov and Lucas Beyer and Xiaohua Zhai and Joan Puigcerver and Jessica Yung and Sylvain Gelly and Neil Houlsby},
       year={2020},
       eprint={1912.11370},
@@ -67,7 +67,7 @@ Models:
     Image Size: '480'
     Weight Decay: 0.0001
     Interpolation: bilinear
-  Code: https://github.com/rwightman/pytorch-image-models/blob/b9843f954b0457af2db4f9dea41a8538f51f5d78/timm/models/resnetv2.py#L444
+  Code: https://github.com/rwightman/pytorch-image-models/blob/b9843f954b0457af2db4f9dea41a8538f51f5d78/timm_new/models/resnetv2.py#L444
   Weights: https://storage.googleapis.com/bit_models/BiT-M-R101x1-ILSVRC2012.npz
   Results:
   - Task: Image Classification
@@ -113,7 +113,7 @@ Models:
     Image Size: '480'
     Weight Decay: 0.0001
     Interpolation: bilinear
-  Code: https://github.com/rwightman/pytorch-image-models/blob/b9843f954b0457af2db4f9dea41a8538f51f5d78/timm/models/resnetv2.py#L451
+  Code: https://github.com/rwightman/pytorch-image-models/blob/b9843f954b0457af2db4f9dea41a8538f51f5d78/timm_new/models/resnetv2.py#L451
   Weights: https://storage.googleapis.com/bit_models/BiT-M-R101x3-ILSVRC2012.npz
   Results:
   - Task: Image Classification
@@ -152,7 +152,7 @@ Models:
     Crop Pct: '1.0'
     Image Size: '480'
     Interpolation: bilinear
-  Code: https://github.com/rwightman/pytorch-image-models/blob/b9843f954b0457af2db4f9dea41a8538f51f5d78/timm/models/resnetv2.py#L458
+  Code: https://github.com/rwightman/pytorch-image-models/blob/b9843f954b0457af2db4f9dea41a8538f51f5d78/timm_new/models/resnetv2.py#L458
   Weights: https://storage.googleapis.com/bit_models/BiT-M-R152x2-ILSVRC2012.npz
   Results:
   - Task: Image Classification
@@ -192,7 +192,7 @@ Models:
     Crop Pct: '1.0'
     Image Size: '480'
     Interpolation: bilinear
-  Code: https://github.com/rwightman/pytorch-image-models/blob/b9843f954b0457af2db4f9dea41a8538f51f5d78/timm/models/resnetv2.py#L465
+  Code: https://github.com/rwightman/pytorch-image-models/blob/b9843f954b0457af2db4f9dea41a8538f51f5d78/timm_new/models/resnetv2.py#L465
   Weights: https://storage.googleapis.com/bit_models/BiT-M-R152x4-ILSVRC2012.npz
   Results:
   - Task: Image Classification
@@ -238,7 +238,7 @@ Models:
     Image Size: '480'
     Weight Decay: 0.0001
     Interpolation: bilinear
-  Code: https://github.com/rwightman/pytorch-image-models/blob/b9843f954b0457af2db4f9dea41a8538f51f5d78/timm/models/resnetv2.py#L430
+  Code: https://github.com/rwightman/pytorch-image-models/blob/b9843f954b0457af2db4f9dea41a8538f51f5d78/timm_new/models/resnetv2.py#L430
   Weights: https://storage.googleapis.com/bit_models/BiT-M-R50x1-ILSVRC2012.npz
   Results:
   - Task: Image Classification
@@ -284,7 +284,7 @@ Models:
     Image Size: '480'
     Weight Decay: 0.0001
     Interpolation: bilinear
-  Code: https://github.com/rwightman/pytorch-image-models/blob/b9843f954b0457af2db4f9dea41a8538f51f5d78/timm/models/resnetv2.py#L437
+  Code: https://github.com/rwightman/pytorch-image-models/blob/b9843f954b0457af2db4f9dea41a8538f51f5d78/timm_new/models/resnetv2.py#L437
   Weights: https://storage.googleapis.com/bit_models/BiT-M-R50x3-ILSVRC2012.npz
   Results:
   - Task: Image Classification

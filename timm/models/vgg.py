@@ -1,7 +1,7 @@
 """VGG
 
 Adapted from https://github.com/pytorch/vision 'vgg.py' (BSD-3-Clause) with a few changes for
-timm functionality.
+timm_new functionality.
 
 Copyright 2021 Ross Wightman
 """
@@ -10,7 +10,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 from typing import Union, List, Dict, Any, cast
 
-from timm.data import IMAGENET_DEFAULT_MEAN, IMAGENET_DEFAULT_STD
+from timm_new.data import IMAGENET_DEFAULT_MEAN, IMAGENET_DEFAULT_STD
 from .helpers import build_model_with_cfg
 from .layers import ClassifierHead, ConvBnAct
 from .registry import register_model

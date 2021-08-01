@@ -6,13 +6,13 @@
 
 ## How do I train this model?
 
-You can follow the [timm recipe scripts](https://rwightman.github.io/pytorch-image-models/scripts/) for training a new model afresh.
+You can follow the [timm_new recipe scripts](https://rwightman.github.io/pytorch-image-models/scripts/) for training a new model afresh.
 
 ## Citation
 
 ```BibTeX
 @misc{wang2019cspnet,
-      title={CSPNet: A New Backbone that can Enhance Learning Capability of CNN}, 
+      title={CSPNet: A New Backbone that can Enhance Learning Capability of CNN},
       author={Chien-Yao Wang and Hong-Yuan Mark Liao and I-Hau Yeh and Yueh-Hua Wu and Ping-Yang Chen and Jun-Wei Hsieh},
       year={2019},
       eprint={1911.11929},
@@ -66,7 +66,7 @@ Models:
     Weight Decay: 0.005
     Interpolation: bilinear
     Training Steps: 8000000
-  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm/models/cspnet.py#L430
+  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm_new/models/cspnet.py#L430
   Weights: https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/cspresnext50_ra_224-648b4713.pth
   Results:
   - Task: Image Classification

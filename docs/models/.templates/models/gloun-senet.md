@@ -8,13 +8,13 @@ The weights from this model were ported from [Gluon](https://cv.gluon.ai/model_z
 
 ## How do I train this model?
 
-You can follow the [timm recipe scripts](https://rwightman.github.io/pytorch-image-models/scripts/) for training a new model afresh.
+You can follow the [timm_new recipe scripts](https://rwightman.github.io/pytorch-image-models/scripts/) for training a new model afresh.
 
 ## Citation
 
 ```BibTeX
 @misc{hu2019squeezeandexcitation,
-      title={Squeeze-and-Excitation Networks}, 
+      title={Squeeze-and-Excitation Networks},
       author={Jie Hu and Li Shen and Samuel Albanie and Gang Sun and Enhua Wu},
       year={2019},
       eprint={1709.01507},
@@ -52,7 +52,7 @@ Models:
     Crop Pct: '0.875'
     Image Size: '224'
     Interpolation: bicubic
-  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm/models/gluon_resnet.py#L239
+  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm_new/models/gluon_resnet.py#L239
   Weights: https://github.com/rwightman/pytorch-pretrained-gluonresnet/releases/download/v0.1/gluon_senet154-70a1a3c0.pth
   Results:
   - Task: Image Classification

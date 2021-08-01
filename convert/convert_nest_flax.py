@@ -22,9 +22,9 @@ def convert_nest(checkpoint_path, arch):
     """
     Expects path to checkpoint which is a dir containing 4 files like in each of these folders
         - https://console.cloud.google.com/storage/browser/gresearch/nest-checkpoints
-    `arch` is needed to 
+    `arch` is needed to
     Returns a state dict that can be used with `torch.nn.Module.load_state_dict`
-    Hint: Follow timm.models.nest.Nest.__init__ and 
+    Hint: Follow timm_new.models.nest.Nest.__init__ and
     https://github.com/google-research/nested-transformer/blob/main/models/nest_net.py
     """
     assert arch in ['nest_base', 'nest_small', 'nest_tiny'], "Your `arch` is not supported"
@@ -36,12 +36,12 @@ def convert_nest(checkpoint_path, arch):
     state_dict['patch_embed.proj.weight'] = torch.tensor(
         flax_dict['PatchEmbedding_0']['Conv_0']['kernel']).permute(3, 2, 0, 1)
     state_dict['patch_embed.proj.bias'] = torch.tensor(flax_dict['PatchEmbedding_0']['Conv_0']['bias'])
-    
+
     # Positional embeddings
     posemb_keys = [k for k in flax_dict.keys() if k.startswith('PositionEmbedding')]
     for i, k in enumerate(posemb_keys):
         state_dict[f'levels.{i}.pos_embed'] = torch.tensor(flax_dict[k]['pos_embedding'])
-    
+
     # Transformer encoders
     depths = arch_depths[arch]
     for level in range(len(depths)):

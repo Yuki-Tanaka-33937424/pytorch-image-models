@@ -8,7 +8,7 @@ The weights from this model were ported from [Tensorflow/Models](https://github.
 
 ## How do I train this model?
 
-You can follow the [timm recipe scripts](https://rwightman.github.io/pytorch-image-models/scripts/) for training a new model afresh.
+You can follow the [timm_new recipe scripts](https://rwightman.github.io/pytorch-image-models/scripts/) for training a new model afresh.
 
 ## Citation
 
@@ -84,7 +84,7 @@ Models:
     Image Size: '224'
     Weight Decay: 1.0e-05
     Interpolation: bilinear
-  Code: https://github.com/rwightman/pytorch-image-models/blob/9a25fdf3ad0414b4d66da443fe60ae0aa14edc84/timm/models/mobilenetv3.py#L394
+  Code: https://github.com/rwightman/pytorch-image-models/blob/9a25fdf3ad0414b4d66da443fe60ae0aa14edc84/timm_new/models/mobilenetv3.py#L394
   Weights: https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/tf_mobilenetv3_large_075-150ee8b0.pth
   Results:
   - Task: Image Classification
@@ -129,7 +129,7 @@ Models:
     Image Size: '224'
     Weight Decay: 1.0e-05
     Interpolation: bilinear
-  Code: https://github.com/rwightman/pytorch-image-models/blob/9a25fdf3ad0414b4d66da443fe60ae0aa14edc84/timm/models/mobilenetv3.py#L403
+  Code: https://github.com/rwightman/pytorch-image-models/blob/9a25fdf3ad0414b4d66da443fe60ae0aa14edc84/timm_new/models/mobilenetv3.py#L403
   Weights: https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/tf_mobilenetv3_large_100-427764d5.pth
   Results:
   - Task: Image Classification
@@ -174,7 +174,7 @@ Models:
     Image Size: '224'
     Weight Decay: 1.0e-05
     Interpolation: bilinear
-  Code: https://github.com/rwightman/pytorch-image-models/blob/9a25fdf3ad0414b4d66da443fe60ae0aa14edc84/timm/models/mobilenetv3.py#L412
+  Code: https://github.com/rwightman/pytorch-image-models/blob/9a25fdf3ad0414b4d66da443fe60ae0aa14edc84/timm_new/models/mobilenetv3.py#L412
   Weights: https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/tf_mobilenetv3_large_minimal_100-8596ae28.pth
   Results:
   - Task: Image Classification
@@ -219,7 +219,7 @@ Models:
     Weight Decay: 4.0e-05
     Interpolation: bilinear
     RMSProp Decay: 0.9
-  Code: https://github.com/rwightman/pytorch-image-models/blob/9a25fdf3ad0414b4d66da443fe60ae0aa14edc84/timm/models/mobilenetv3.py#L421
+  Code: https://github.com/rwightman/pytorch-image-models/blob/9a25fdf3ad0414b4d66da443fe60ae0aa14edc84/timm_new/models/mobilenetv3.py#L421
   Weights: https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/tf_mobilenetv3_small_075-da427f52.pth
   Results:
   - Task: Image Classification
@@ -264,7 +264,7 @@ Models:
     Weight Decay: 4.0e-05
     Interpolation: bilinear
     RMSProp Decay: 0.9
-  Code: https://github.com/rwightman/pytorch-image-models/blob/9a25fdf3ad0414b4d66da443fe60ae0aa14edc84/timm/models/mobilenetv3.py#L430
+  Code: https://github.com/rwightman/pytorch-image-models/blob/9a25fdf3ad0414b4d66da443fe60ae0aa14edc84/timm_new/models/mobilenetv3.py#L430
   Weights: https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/tf_mobilenetv3_small_100-37f49e2b.pth
   Results:
   - Task: Image Classification
@@ -309,7 +309,7 @@ Models:
     Weight Decay: 4.0e-05
     Interpolation: bilinear
     RMSProp Decay: 0.9
-  Code: https://github.com/rwightman/pytorch-image-models/blob/9a25fdf3ad0414b4d66da443fe60ae0aa14edc84/timm/models/mobilenetv3.py#L439
+  Code: https://github.com/rwightman/pytorch-image-models/blob/9a25fdf3ad0414b4d66da443fe60ae0aa14edc84/timm_new/models/mobilenetv3.py#L439
   Weights: https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/tf_mobilenetv3_small_minimal_100-922a7843.pth
   Results:
   - Task: Image Classification

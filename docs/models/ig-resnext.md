@@ -1,8 +1,8 @@
 # Instagram ResNeXt WSL
 
-A **ResNeXt** repeats a [building block](https://paperswithcode.com/method/resnext-block) that aggregates a set of transformations with the same topology. Compared to a [ResNet](https://paperswithcode.com/method/resnet), it exposes a new dimension,  *cardinality* (the size of the set of transformations) $C$, as an essential factor in addition to the dimensions of depth and width. 
+A **ResNeXt** repeats a [building block](https://paperswithcode.com/method/resnext-block) that aggregates a set of transformations with the same topology. Compared to a [ResNet](https://paperswithcode.com/method/resnet), it exposes a new dimension,  *cardinality* (the size of the set of transformations) $C$, as an essential factor in addition to the dimensions of depth and width.
 
-This model was trained on billions of Instagram images using thousands of distinct hashtags as labels exhibit excellent transfer learning performance. 
+This model was trained on billions of Instagram images using thousands of distinct hashtags as labels exhibit excellent transfer learning performance.
 
 Please note the CC-BY-NC 4.0 license on theses weights, non-commercial use only.
 
@@ -10,17 +10,17 @@ Please note the CC-BY-NC 4.0 license on theses weights, non-commercial use only.
 To load a pretrained model:
 
 ```python
-import timm
-model = timm.create_model('ig_resnext101_32x16d', pretrained=True)
+import timm_new
+model = timm_new.create_model('ig_resnext101_32x16d', pretrained=True)
 model.eval()
 ```
 
 To load and preprocess the image:
-```python 
+```python
 import urllib
 from PIL import Image
-from timm.data import resolve_data_config
-from timm.data.transforms_factory import create_transform
+from timm_new.data import resolve_data_config
+from timm_new.data.transforms_factory import create_transform
 
 config = resolve_data_config({}, model=model)
 transform = create_transform(**config)
@@ -45,7 +45,7 @@ To get the top-5 predictions class names:
 ```python
 # Get imagenet class mappings
 url, filename = ("https://raw.githubusercontent.com/pytorch/hub/master/imagenet_classes.txt", "imagenet_classes.txt")
-urllib.request.urlretrieve(url, filename) 
+urllib.request.urlretrieve(url, filename)
 with open("imagenet_classes.txt", "r") as f:
     categories = [s.strip() for s in f.readlines()]
 
@@ -59,25 +59,25 @@ for i in range(top5_prob.size(0)):
 
 Replace the model name with the variant you want to use, e.g. `ig_resnext101_32x16d`. You can find the IDs in the model summaries at the top of this page.
 
-To extract image features with this model, follow the [timm feature extraction examples](https://rwightman.github.io/pytorch-image-models/feature_extraction/), just change the name of the model you want to use.
+To extract image features with this model, follow the [timm_new feature extraction examples](https://rwightman.github.io/pytorch-image-models/feature_extraction/), just change the name of the model you want to use.
 
 ## How do I finetune this model?
 You can finetune any of the pre-trained models just by changing the classifier (the last layer).
 ```python
-model = timm.create_model('ig_resnext101_32x16d', pretrained=True, num_classes=NUM_FINETUNE_CLASSES)
+model = timm_new.create_model('ig_resnext101_32x16d', pretrained=True, num_classes=NUM_FINETUNE_CLASSES)
 ```
-To finetune on your own dataset, you have to write a training loop or adapt [timm's training
+To finetune on your own dataset, you have to write a training loop or adapt [timm_new's training
 script](https://github.com/rwightman/pytorch-image-models/blob/master/train.py) to use your dataset.
 
 ## How do I train this model?
 
-You can follow the [timm recipe scripts](https://rwightman.github.io/pytorch-image-models/scripts/) for training a new model afresh.
+You can follow the [timm_new recipe scripts](https://rwightman.github.io/pytorch-image-models/scripts/) for training a new model afresh.
 
 ## Citation
 
 ```BibTeX
 @misc{mahajan2018exploring,
-      title={Exploring the Limits of Weakly Supervised Pretraining}, 
+      title={Exploring the Limits of Weakly Supervised Pretraining},
       author={Dhruv Mahajan and Ross Girshick and Vignesh Ramanathan and Kaiming He and Manohar Paluri and Yixuan Li and Ashwin Bharambe and Laurens van der Maaten},
       year={2018},
       eprint={1805.00932},
@@ -129,7 +129,7 @@ Models:
     Image Size: '224'
     Weight Decay: 0.001
     Interpolation: bilinear
-  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm/models/resnet.py#L874
+  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm_new/models/resnet.py#L874
   Weights: https://download.pytorch.org/models/ig_resnext101_32x16-c6f796b0.pth
   Results:
   - Task: Image Classification
@@ -173,7 +173,7 @@ Models:
     Weight Decay: 0.001
     Interpolation: bilinear
     Minibatch Size: 8064
-  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm/models/resnet.py#L885
+  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm_new/models/resnet.py#L885
   Weights: https://download.pytorch.org/models/ig_resnext101_32x32-e4b90b00.pth
   Results:
   - Task: Image Classification
@@ -216,7 +216,7 @@ Models:
     Image Size: '224'
     Weight Decay: 0.001
     Interpolation: bilinear
-  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm/models/resnet.py#L896
+  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm_new/models/resnet.py#L896
   Weights: https://download.pytorch.org/models/ig_resnext101_32x48-3e41cc8a.pth
   Results:
   - Task: Image Classification
@@ -259,7 +259,7 @@ Models:
     Image Size: '224'
     Weight Decay: 0.001
     Interpolation: bilinear
-  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm/models/resnet.py#L863
+  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm_new/models/resnet.py#L863
   Weights: https://download.pytorch.org/models/ig_resnext101_32x8-c38310e5.pth
   Results:
   - Task: Image Classification

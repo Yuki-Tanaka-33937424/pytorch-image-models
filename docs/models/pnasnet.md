@@ -1,22 +1,22 @@
 # PNASNet
 
-**Progressive Neural Architecture Search**, or **PNAS**, is a method for learning the structure of convolutional neural networks (CNNs). It uses a sequential model-based optimization (SMBO) strategy, where we search the space of cell structures, starting with simple (shallow) models and progressing to complex ones, pruning out unpromising structures as we go. 
+**Progressive Neural Architecture Search**, or **PNAS**, is a method for learning the structure of convolutional neural networks (CNNs). It uses a sequential model-based optimization (SMBO) strategy, where we search the space of cell structures, starting with simple (shallow) models and progressing to complex ones, pruning out unpromising structures as we go.
 
 ## How do I use this model on an image?
 To load a pretrained model:
 
 ```python
-import timm
-model = timm.create_model('pnasnet5large', pretrained=True)
+import timm_new
+model = timm_new.create_model('pnasnet5large', pretrained=True)
 model.eval()
 ```
 
 To load and preprocess the image:
-```python 
+```python
 import urllib
 from PIL import Image
-from timm.data import resolve_data_config
-from timm.data.transforms_factory import create_transform
+from timm_new.data import resolve_data_config
+from timm_new.data.transforms_factory import create_transform
 
 config = resolve_data_config({}, model=model)
 transform = create_transform(**config)
@@ -41,7 +41,7 @@ To get the top-5 predictions class names:
 ```python
 # Get imagenet class mappings
 url, filename = ("https://raw.githubusercontent.com/pytorch/hub/master/imagenet_classes.txt", "imagenet_classes.txt")
-urllib.request.urlretrieve(url, filename) 
+urllib.request.urlretrieve(url, filename)
 with open("imagenet_classes.txt", "r") as f:
     categories = [s.strip() for s in f.readlines()]
 
@@ -55,25 +55,25 @@ for i in range(top5_prob.size(0)):
 
 Replace the model name with the variant you want to use, e.g. `pnasnet5large`. You can find the IDs in the model summaries at the top of this page.
 
-To extract image features with this model, follow the [timm feature extraction examples](https://rwightman.github.io/pytorch-image-models/feature_extraction/), just change the name of the model you want to use.
+To extract image features with this model, follow the [timm_new feature extraction examples](https://rwightman.github.io/pytorch-image-models/feature_extraction/), just change the name of the model you want to use.
 
 ## How do I finetune this model?
 You can finetune any of the pre-trained models just by changing the classifier (the last layer).
 ```python
-model = timm.create_model('pnasnet5large', pretrained=True, num_classes=NUM_FINETUNE_CLASSES)
+model = timm_new.create_model('pnasnet5large', pretrained=True, num_classes=NUM_FINETUNE_CLASSES)
 ```
-To finetune on your own dataset, you have to write a training loop or adapt [timm's training
+To finetune on your own dataset, you have to write a training loop or adapt [timm_new's training
 script](https://github.com/rwightman/pytorch-image-models/blob/master/train.py) to use your dataset.
 
 ## How do I train this model?
 
-You can follow the [timm recipe scripts](https://rwightman.github.io/pytorch-image-models/scripts/) for training a new model afresh.
+You can follow the [timm_new recipe scripts](https://rwightman.github.io/pytorch-image-models/scripts/) for training a new model afresh.
 
 ## Citation
 
 ```BibTeX
 @misc{liu2018progressive,
-      title={Progressive Neural Architecture Search}, 
+      title={Progressive Neural Architecture Search},
       author={Chenxi Liu and Barret Zoph and Maxim Neumann and Jonathon Shlens and Wei Hua and Li-Jia Li and Li Fei-Fei and Alan Yuille and Jonathan Huang and Kevin Murphy},
       year={2018},
       eprint={1712.00559},
@@ -121,7 +121,7 @@ Models:
     Image Size: '331'
     Interpolation: bicubic
     Label Smoothing: 0.1
-  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm/models/pnasnet.py#L343
+  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm_new/models/pnasnet.py#L343
   Weights: https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-cadene/pnasnet5large-bf079911.pth
   Results:
   - Task: Image Classification

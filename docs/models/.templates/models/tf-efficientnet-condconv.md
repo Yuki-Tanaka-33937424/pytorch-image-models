@@ -14,7 +14,7 @@ The weights from this model were ported from [Tensorflow/TPU](https://github.com
 
 ## How do I train this model?
 
-You can follow the [timm recipe scripts](https://rwightman.github.io/pytorch-image-models/scripts/) for training a new model afresh.
+You can follow the [timm_new recipe scripts](https://rwightman.github.io/pytorch-image-models/scripts/) for training a new model afresh.
 
 ## Citation
 
@@ -84,7 +84,7 @@ Models:
     RMSProp Decay: 0.9
     Label Smoothing: 0.1
     BatchNorm Momentum: 0.99
-  Code: https://github.com/rwightman/pytorch-image-models/blob/9a25fdf3ad0414b4d66da443fe60ae0aa14edc84/timm/models/efficientnet.py#L1561
+  Code: https://github.com/rwightman/pytorch-image-models/blob/9a25fdf3ad0414b4d66da443fe60ae0aa14edc84/timm_new/models/efficientnet.py#L1561
   Weights: https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/tf_efficientnet_cc_b0_4e-4362b6b2.pth
   Results:
   - Task: Image Classification
@@ -131,7 +131,7 @@ Models:
     RMSProp Decay: 0.9
     Label Smoothing: 0.1
     BatchNorm Momentum: 0.99
-  Code: https://github.com/rwightman/pytorch-image-models/blob/9a25fdf3ad0414b4d66da443fe60ae0aa14edc84/timm/models/efficientnet.py#L1572
+  Code: https://github.com/rwightman/pytorch-image-models/blob/9a25fdf3ad0414b4d66da443fe60ae0aa14edc84/timm_new/models/efficientnet.py#L1572
   Weights: https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/tf_efficientnet_cc_b0_8e-66184a25.pth
   Results:
   - Task: Image Classification
@@ -178,7 +178,7 @@ Models:
     RMSProp Decay: 0.9
     Label Smoothing: 0.1
     BatchNorm Momentum: 0.99
-  Code: https://github.com/rwightman/pytorch-image-models/blob/9a25fdf3ad0414b4d66da443fe60ae0aa14edc84/timm/models/efficientnet.py#L1584
+  Code: https://github.com/rwightman/pytorch-image-models/blob/9a25fdf3ad0414b4d66da443fe60ae0aa14edc84/timm_new/models/efficientnet.py#L1584
   Weights: https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/tf_efficientnet_cc_b1_8e-f7c79ae1.pth
   Results:
   - Task: Image Classification

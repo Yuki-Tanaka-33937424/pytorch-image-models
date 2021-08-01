@@ -16,8 +16,8 @@ Original code: https://github.com/facebookresearch/convit, original copyright be
 # This source code is licensed under the CC-by-NC license found in the
 # LICENSE file in the root directory of this source tree.
 #
-'''These modules are adapted from those of timm, see
-https://github.com/rwightman/pytorch-image-models/blob/master/timm/models/vision_transformer.py
+'''These modules are adapted from those of timm_new, see
+https://github.com/rwightman/pytorch-image-models/blob/master/timm_new/models/vision_transformer.py
 '''
 
 import torch
@@ -25,7 +25,7 @@ import torch.nn as nn
 from functools import partial
 import torch.nn.functional as F
 
-from timm.data import IMAGENET_DEFAULT_MEAN, IMAGENET_DEFAULT_STD
+from timm_new.data import IMAGENET_DEFAULT_MEAN, IMAGENET_DEFAULT_STD
 from .helpers import build_model_with_cfg
 from .layers import DropPath, to_2tuple, trunc_normal_, PatchEmbed, Mlp
 from .registry import register_model

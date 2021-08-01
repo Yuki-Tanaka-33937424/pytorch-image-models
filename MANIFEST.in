@@ -1,2 +1,1 @@
-include timm/models/pruned/*.txt
-
+include timm_new/models/pruned/*.txt

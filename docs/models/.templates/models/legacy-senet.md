@@ -8,13 +8,13 @@ The weights from this model were ported from Gluon.
 
 ## How do I train this model?
 
-You can follow the [timm recipe scripts](https://rwightman.github.io/pytorch-image-models/scripts/) for training a new model afresh.
+You can follow the [timm_new recipe scripts](https://rwightman.github.io/pytorch-image-models/scripts/) for training a new model afresh.
 
 ## Citation
 
 ```BibTeX
 @misc{hu2019squeezeandexcitation,
-      title={Squeeze-and-Excitation Networks}, 
+      title={Squeeze-and-Excitation Networks},
       author={Jie Hu and Li Shen and Samuel Albanie and Gang Sun and Enhua Wu},
       year={2019},
       eprint={1709.01507},
@@ -63,7 +63,7 @@ Models:
     Batch Size: 1024
     Image Size: '224'
     Interpolation: bilinear
-  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm/models/senet.py#L440
+  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm_new/models/senet.py#L440
   Weights: http://data.lip6.fr/cadene/pretrainedmodels/senet154-c7b49a05.pth
   Results:
   - Task: Image Classification

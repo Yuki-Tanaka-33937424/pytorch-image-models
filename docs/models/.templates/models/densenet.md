@@ -8,7 +8,7 @@ The **DenseNet Blur** variant in this collection by Ross Wightman employs [Blur 
 
 ## How do I train this model?
 
-You can follow the [timm recipe scripts](https://rwightman.github.io/pytorch-image-models/scripts/) for training a new model afresh.
+You can follow the [timm_new recipe scripts](https://rwightman.github.io/pytorch-image-models/scripts/) for training a new model afresh.
 
 ## Citation
 
@@ -31,7 +31,7 @@ You can follow the [timm recipe scripts](https://rwightman.github.io/pytorch-ima
 ```
 
 ```
-@misc{rw2019timm,
+@misc{rw2019timm_new,
   author = {Ross Wightman},
   title = {PyTorch Image Models},
   year = {2019},
@@ -86,7 +86,7 @@ Models:
     Image Size: '224'
     Weight Decay: 0.0001
     Interpolation: bicubic
-  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm/models/densenet.py#L295
+  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm_new/models/densenet.py#L295
   Weights: https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/densenet121_ra-50efcf5c.pth
   Results:
   - Task: Image Classification
@@ -130,7 +130,7 @@ Models:
     Image Size: '224'
     Weight Decay: 0.0001
     Interpolation: bicubic
-  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm/models/densenet.py#L347
+  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm_new/models/densenet.py#L347
   Weights: https://download.pytorch.org/models/densenet161-8d451a50.pth
   Results:
   - Task: Image Classification
@@ -174,7 +174,7 @@ Models:
     Image Size: '224'
     Weight Decay: 0.0001
     Interpolation: bicubic
-  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm/models/densenet.py#L327
+  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm_new/models/densenet.py#L327
   Weights: https://download.pytorch.org/models/densenet169-b2777c0a.pth
   Results:
   - Task: Image Classification
@@ -218,7 +218,7 @@ Models:
     Image Size: '224'
     Weight Decay: 0.0001
     Interpolation: bicubic
-  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm/models/densenet.py#L337
+  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm_new/models/densenet.py#L337
   Weights: https://download.pytorch.org/models/densenet201-c1103571.pth
   Results:
   - Task: Image Classification
@@ -251,7 +251,7 @@ Models:
     Crop Pct: '0.875'
     Image Size: '224'
     Interpolation: bicubic
-  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm/models/densenet.py#L305
+  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm_new/models/densenet.py#L305
   Weights: https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/densenetblur121d_ra-100dcfbc.pth
   Results:
   - Task: Image Classification
@@ -294,7 +294,7 @@ Models:
     LR Step Size: 30
     Weight Decay: 0.0001
     Interpolation: bicubic
-  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm/models/densenet.py#L379
+  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm_new/models/densenet.py#L379
   Weights: https://download.pytorch.org/models/densenet121-a639ec97.pth
   Results:
   - Task: Image Classification

@@ -8,14 +8,14 @@ The weights from this model were ported from [Tensorflow/Models](https://github.
 
 ## How do I train this model?
 
-You can follow the [timm recipe scripts](https://rwightman.github.io/pytorch-image-models/scripts/) for training a new model afresh.
+You can follow the [timm_new recipe scripts](https://rwightman.github.io/pytorch-image-models/scripts/) for training a new model afresh.
 
 ## Citation
 
 ```BibTeX
 @article{DBLP:journals/corr/ZagoruykoK16,
 @misc{chollet2017xception,
-      title={Xception: Deep Learning with Depthwise Separable Convolutions}, 
+      title={Xception: Deep Learning with Depthwise Separable Convolutions},
       author={François Chollet},
       year={2017},
       eprint={1610.02357},
@@ -56,7 +56,7 @@ Models:
     Crop Pct: '0.897'
     Image Size: '299'
     Interpolation: bicubic
-  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm/models/xception.py#L229
+  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm_new/models/xception.py#L229
   Weights: https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-cadene/xception-43020ad28.pth
   Results:
   - Task: Image Classification
@@ -88,7 +88,7 @@ Models:
     Crop Pct: '0.903'
     Image Size: '299'
     Interpolation: bicubic
-  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm/models/xception_aligned.py#L181
+  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm_new/models/xception_aligned.py#L181
   Weights: https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/tf_xception_41-e6439c97.pth
   Results:
   - Task: Image Classification
@@ -120,7 +120,7 @@ Models:
     Crop Pct: '0.903'
     Image Size: '299'
     Interpolation: bicubic
-  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm/models/xception_aligned.py#L200
+  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm_new/models/xception_aligned.py#L200
   Weights: https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/tf_xception_65-c9ae96e8.pth
   Results:
   - Task: Image Classification
@@ -152,7 +152,7 @@ Models:
     Crop Pct: '0.903'
     Image Size: '299'
     Interpolation: bicubic
-  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm/models/xception_aligned.py#L219
+  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm_new/models/xception_aligned.py#L219
   Weights: https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/tf_xception_71-8eec7df1.pth
   Results:
   - Task: Image Classification

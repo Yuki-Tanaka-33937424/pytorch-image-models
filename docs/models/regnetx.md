@@ -10,17 +10,17 @@ For **RegNetX** we have additional restrictions: we set $b = 1$ (the bottleneck 
 To load a pretrained model:
 
 ```python
-import timm
-model = timm.create_model('regnetx_002', pretrained=True)
+import timm_new
+model = timm_new.create_model('regnetx_002', pretrained=True)
 model.eval()
 ```
 
 To load and preprocess the image:
-```python 
+```python
 import urllib
 from PIL import Image
-from timm.data import resolve_data_config
-from timm.data.transforms_factory import create_transform
+from timm_new.data import resolve_data_config
+from timm_new.data.transforms_factory import create_transform
 
 config = resolve_data_config({}, model=model)
 transform = create_transform(**config)
@@ -45,7 +45,7 @@ To get the top-5 predictions class names:
 ```python
 # Get imagenet class mappings
 url, filename = ("https://raw.githubusercontent.com/pytorch/hub/master/imagenet_classes.txt", "imagenet_classes.txt")
-urllib.request.urlretrieve(url, filename) 
+urllib.request.urlretrieve(url, filename)
 with open("imagenet_classes.txt", "r") as f:
     categories = [s.strip() for s in f.readlines()]
 
@@ -59,25 +59,25 @@ for i in range(top5_prob.size(0)):
 
 Replace the model name with the variant you want to use, e.g. `regnetx_002`. You can find the IDs in the model summaries at the top of this page.
 
-To extract image features with this model, follow the [timm feature extraction examples](https://rwightman.github.io/pytorch-image-models/feature_extraction/), just change the name of the model you want to use.
+To extract image features with this model, follow the [timm_new feature extraction examples](https://rwightman.github.io/pytorch-image-models/feature_extraction/), just change the name of the model you want to use.
 
 ## How do I finetune this model?
 You can finetune any of the pre-trained models just by changing the classifier (the last layer).
 ```python
-model = timm.create_model('regnetx_002', pretrained=True, num_classes=NUM_FINETUNE_CLASSES)
+model = timm_new.create_model('regnetx_002', pretrained=True, num_classes=NUM_FINETUNE_CLASSES)
 ```
-To finetune on your own dataset, you have to write a training loop or adapt [timm's training
+To finetune on your own dataset, you have to write a training loop or adapt [timm_new's training
 script](https://github.com/rwightman/pytorch-image-models/blob/master/train.py) to use your dataset.
 
 ## How do I train this model?
 
-You can follow the [timm recipe scripts](https://rwightman.github.io/pytorch-image-models/scripts/) for training a new model afresh.
+You can follow the [timm_new recipe scripts](https://rwightman.github.io/pytorch-image-models/scripts/) for training a new model afresh.
 
 ## Citation
 
 ```BibTeX
 @misc{radosavovic2020designing,
-      title={Designing Network Design Spaces}, 
+      title={Designing Network Design Spaces},
       author={Ilija Radosavovic and Raj Prateek Kosaraju and Ross Girshick and Kaiming He and Piotr Dollár},
       year={2020},
       eprint={2003.13678},
@@ -124,7 +124,7 @@ Models:
     Image Size: '224'
     Weight Decay: 5.0e-05
     Interpolation: bicubic
-  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm/models/regnet.py#L337
+  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm_new/models/regnet.py#L337
   Weights: https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-regnet/regnetx_002-e7e85e5c.pth
   Results:
   - Task: Image Classification
@@ -162,7 +162,7 @@ Models:
     Image Size: '224'
     Weight Decay: 5.0e-05
     Interpolation: bicubic
-  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm/models/regnet.py#L343
+  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm_new/models/regnet.py#L343
   Weights: https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-regnet/regnetx_004-7d0e9424.pth
   Results:
   - Task: Image Classification
@@ -200,7 +200,7 @@ Models:
     Image Size: '224'
     Weight Decay: 5.0e-05
     Interpolation: bicubic
-  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm/models/regnet.py#L349
+  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm_new/models/regnet.py#L349
   Weights: https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-regnet/regnetx_006-85ec1baa.pth
   Results:
   - Task: Image Classification
@@ -238,7 +238,7 @@ Models:
     Image Size: '224'
     Weight Decay: 5.0e-05
     Interpolation: bicubic
-  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm/models/regnet.py#L355
+  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm_new/models/regnet.py#L355
   Weights: https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-regnet/regnetx_008-d8b470eb.pth
   Results:
   - Task: Image Classification
@@ -276,7 +276,7 @@ Models:
     Image Size: '224'
     Weight Decay: 5.0e-05
     Interpolation: bicubic
-  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm/models/regnet.py#L361
+  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm_new/models/regnet.py#L361
   Weights: https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-regnet/regnetx_016-65ca972a.pth
   Results:
   - Task: Image Classification
@@ -314,7 +314,7 @@ Models:
     Image Size: '224'
     Weight Decay: 5.0e-05
     Interpolation: bicubic
-  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm/models/regnet.py#L367
+  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm_new/models/regnet.py#L367
   Weights: https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-regnet/regnetx_032-ed0c7f7e.pth
   Results:
   - Task: Image Classification
@@ -352,7 +352,7 @@ Models:
     Image Size: '224'
     Weight Decay: 5.0e-05
     Interpolation: bicubic
-  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm/models/regnet.py#L373
+  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm_new/models/regnet.py#L373
   Weights: https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-regnet/regnetx_040-73c2a654.pth
   Results:
   - Task: Image Classification
@@ -390,7 +390,7 @@ Models:
     Image Size: '224'
     Weight Decay: 5.0e-05
     Interpolation: bicubic
-  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm/models/regnet.py#L379
+  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm_new/models/regnet.py#L379
   Weights: https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-regnet/regnetx_064-29278baa.pth
   Results:
   - Task: Image Classification
@@ -428,7 +428,7 @@ Models:
     Image Size: '224'
     Weight Decay: 5.0e-05
     Interpolation: bicubic
-  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm/models/regnet.py#L385
+  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm_new/models/regnet.py#L385
   Weights: https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-regnet/regnetx_080-7c7fcab1.pth
   Results:
   - Task: Image Classification
@@ -466,7 +466,7 @@ Models:
     Image Size: '224'
     Weight Decay: 5.0e-05
     Interpolation: bicubic
-  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm/models/regnet.py#L391
+  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm_new/models/regnet.py#L391
   Weights: https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-regnet/regnetx_120-65d5521e.pth
   Results:
   - Task: Image Classification
@@ -504,7 +504,7 @@ Models:
     Image Size: '224'
     Weight Decay: 5.0e-05
     Interpolation: bicubic
-  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm/models/regnet.py#L397
+  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm_new/models/regnet.py#L397
   Weights: https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-regnet/regnetx_160-c98c4112.pth
   Results:
   - Task: Image Classification
@@ -542,7 +542,7 @@ Models:
     Image Size: '224'
     Weight Decay: 5.0e-05
     Interpolation: bicubic
-  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm/models/regnet.py#L403
+  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm_new/models/regnet.py#L403
   Weights: https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-regnet/regnetx_320-8ea38b93.pth
   Results:
   - Task: Image Classification

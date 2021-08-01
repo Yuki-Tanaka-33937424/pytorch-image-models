@@ -1,6 +1,6 @@
 # Feature Extraction
 
-All of the models in `timm` have consistent mechanisms for obtaining various types of features from the model for tasks besides classification.
+All of the models in `timm_new` have consistent mechanisms for obtaining various types of features from the model for tasks besides classification.
 
 ## Penultimate Layer Features (Pre-Classifier Features)
 
@@ -17,8 +17,8 @@ If one wants to explicitly modify the network to return unpooled features, they 
 #### forward_features()
 ```python hl_lines="3 6"
 import torch
-import timm
-m = timm.create_model('xception41', pretrained=True)
+import timm_new
+m = timm_new.create_model('xception41', pretrained=True)
 o = m(torch.randn(2, 3, 299, 299))
 print(f'Original shape: {o.shape}')
 o = m.forward_features(torch.randn(2, 3, 299, 299))
@@ -33,8 +33,8 @@ Unpooled shape: torch.Size([2, 2048, 10, 10])
 #### Create with no classifier and pooling
 ```python hl_lines="3"
 import torch
-import timm
-m = timm.create_model('resnet50', pretrained=True, num_classes=0, global_pool='')
+import timm_new
+m = timm_new.create_model('resnet50', pretrained=True, num_classes=0, global_pool='')
 o = m(torch.randn(2, 3, 224, 224))
 print(f'Unpooled shape: {o.shape}')
 ```
@@ -46,8 +46,8 @@ Unpooled shape: torch.Size([2, 2048, 7, 7])
 #### Remove it later
 ```python hl_lines="3 6"
 import torch
-import timm
-m = timm.create_model('densenet121', pretrained=True)
+import timm_new
+m = timm_new.create_model('densenet121', pretrained=True)
 o = m(torch.randn(2, 3, 224, 224))
 print(f'Original shape: {o.shape}')
 m.reset_classifier(0, '')
@@ -62,13 +62,13 @@ Unpooled shape: torch.Size([2, 1024, 7, 7])
 
 ### Pooled
 
-To modify the network to return pooled features, one can use `forward_features()` and pool/flatten the result themselves, or modify the network like above but keep pooling intact. 
+To modify the network to return pooled features, one can use `forward_features()` and pool/flatten the result themselves, or modify the network like above but keep pooling intact.
 
 #### Create with no classifier
 ```python hl_lines="3"
 import torch
-import timm
-m = timm.create_model('resnet50', pretrained=True, num_classes=0)
+import timm_new
+m = timm_new.create_model('resnet50', pretrained=True, num_classes=0)
 o = m(torch.randn(2, 3, 224, 224))
 print(f'Pooled shape: {o.shape}')
 ```
@@ -80,8 +80,8 @@ Pooled shape: torch.Size([2, 2048])
 #### Remove it later
 ```python hl_lines="3 6"
 import torch
-import timm
-m = timm.create_model('ese_vovnet19b_dw', pretrained=True)
+import timm_new
+m = timm_new.create_model('ese_vovnet19b_dw', pretrained=True)
 o = m(torch.randn(2, 3, 224, 224))
 print(f'Original shape: {o.shape}')
 m.reset_classifier(0)
@@ -98,15 +98,15 @@ Pooled shape: torch.Size([2, 1024])
 
 Object detection, segmentation, keypoint, and a variety of dense pixel tasks require access to feature maps from the backbone network at multiple scales. This is often done by modifying the original classification network. Since each network varies quite a bit in structure, it's not uncommon to see only a few backbones supported in any given obj detection or segmentation library.
 
-`timm` allows a consistent interface for creating any of the included models as feature backbones that output feature maps for selected levels. 
+`timm_new` allows a consistent interface for creating any of the included models as feature backbones that output feature maps for selected levels.
 
 A feature backbone can be created by adding the argument `features_only=True` to any `create_model` call. By default 5 strides will be output from most models (not all have that many), with the first starting at 2 (some start at 1 or 4).
 
 ### Create a feature map extraction model
 ```python hl_lines="3"
 import torch
-import timm
-m = timm.create_model('resnest26d', features_only=True, pretrained=True)
+import timm_new
+m = timm_new.create_model('resnest26d', features_only=True, pretrained=True)
 o = m(torch.randn(2, 3, 224, 224))
 for x in o:
   print(x.shape)
@@ -126,8 +126,8 @@ After a feature backbone has been created, it can be queried to provide channel 
 
 ```python hl_lines="3 4"
 import torch
-import timm
-m = timm.create_model('regnety_032', features_only=True, pretrained=True)
+import timm_new
+m = timm_new.create_model('regnety_032', features_only=True, pretrained=True)
 print(f'Feature channels: {m.feature_info.channels()}')
 o = m(torch.randn(2, 3, 224, 224))
 for x in o:
@@ -145,7 +145,7 @@ torch.Size([2, 1512, 7, 7])
 
 ### Select specific feature levels or limit the stride
 
-There are to additional creation arguments impacting the output features. 
+There are to additional creation arguments impacting the output features.
 
 * `out_indices` selects which indices to output
 * `output_stride` limits the feature output stride of the network (also works in classification mode BTW)
@@ -156,8 +156,8 @@ There are to additional creation arguments impacting the output features.
 
 ```python hl_lines="3 4 5"
 import torch
-import timm
-m = timm.create_model('ecaresnet101d', features_only=True, output_stride=8, out_indices=(2, 4), pretrained=True)
+import timm_new
+m = timm_new.create_model('ecaresnet101d', features_only=True, output_stride=8, out_indices=(2, 4), pretrained=True)
 print(f'Feature channels: {m.feature_info.channels()}')
 print(f'Feature reduction: {m.feature_info.reduction()}')
 o = m(torch.randn(2, 3, 320, 320))

@@ -8,13 +8,13 @@ The principal building block is the [FBNet Block](https://paperswithcode.com/met
 
 ## How do I train this model?
 
-You can follow the [timm recipe scripts](https://rwightman.github.io/pytorch-image-models/scripts/) for training a new model afresh.
+You can follow the [timm_new recipe scripts](https://rwightman.github.io/pytorch-image-models/scripts/) for training a new model afresh.
 
 ## Citation
 
 ```BibTeX
 @misc{wu2019fbnet,
-      title={FBNet: Hardware-Aware Efficient ConvNet Design via Differentiable Neural Architecture Search}, 
+      title={FBNet: Hardware-Aware Efficient ConvNet Design via Differentiable Neural Architecture Search},
       author={Bichen Wu and Xiaoliang Dai and Peizhao Zhang and Yanghan Wang and Fei Sun and Yiming Wu and Yuandong Tian and Peter Vajda and Yangqing Jia and Kurt Keutzer},
       year={2019},
       eprint={1812.03443},
@@ -65,7 +65,7 @@ Models:
     Image Size: '224'
     Weight Decay: 0.0005
     Interpolation: bilinear
-  Code: https://github.com/rwightman/pytorch-image-models/blob/9a25fdf3ad0414b4d66da443fe60ae0aa14edc84/timm/models/efficientnet.py#L985
+  Code: https://github.com/rwightman/pytorch-image-models/blob/9a25fdf3ad0414b4d66da443fe60ae0aa14edc84/timm_new/models/efficientnet.py#L985
   Weights: https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/fbnetc_100-c345b898.pth
   Results:
   - Task: Image Classification

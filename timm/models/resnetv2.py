@@ -1,7 +1,7 @@
 """Pre-Activation ResNet v2 with GroupNorm and Weight Standardization.
 
 A PyTorch implementation of ResNetV2 adapted from the Google Big-Transfoer (BiT) source code
-at https://github.com/google-research/big_transfer to match timm interfaces. The BiT weights have
+at https://github.com/google-research/big_transfer to match timm_new interfaces. The BiT weights have
 been included here as pretrained models from their original .NPZ checkpoints.
 
 Additionally, supports non pre-activation bottleneck for use as a backbone for Vision Transfomers (ViT) and
@@ -35,7 +35,7 @@ import torch
 import torch.nn as nn
 from functools import partial
 
-from timm.data import IMAGENET_INCEPTION_MEAN, IMAGENET_INCEPTION_STD
+from timm_new.data import IMAGENET_INCEPTION_MEAN, IMAGENET_INCEPTION_STD
 from .helpers import build_model_with_cfg, named_apply, adapt_input_conv
 from .registry import register_model
 from .layers import GroupNormAct, BatchNormAct2d, EvoNormBatch2d, EvoNormSample2d,\

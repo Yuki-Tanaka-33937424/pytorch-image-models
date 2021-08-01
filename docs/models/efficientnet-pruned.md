@@ -12,17 +12,17 @@ This collection consists of pruned EfficientNet models.
 To load a pretrained model:
 
 ```python
-import timm
-model = timm.create_model('efficientnet_b1_pruned', pretrained=True)
+import timm_new
+model = timm_new.create_model('efficientnet_b1_pruned', pretrained=True)
 model.eval()
 ```
 
 To load and preprocess the image:
-```python 
+```python
 import urllib
 from PIL import Image
-from timm.data import resolve_data_config
-from timm.data.transforms_factory import create_transform
+from timm_new.data import resolve_data_config
+from timm_new.data.transforms_factory import create_transform
 
 config = resolve_data_config({}, model=model)
 transform = create_transform(**config)
@@ -47,7 +47,7 @@ To get the top-5 predictions class names:
 ```python
 # Get imagenet class mappings
 url, filename = ("https://raw.githubusercontent.com/pytorch/hub/master/imagenet_classes.txt", "imagenet_classes.txt")
-urllib.request.urlretrieve(url, filename) 
+urllib.request.urlretrieve(url, filename)
 with open("imagenet_classes.txt", "r") as f:
     categories = [s.strip() for s in f.readlines()]
 
@@ -61,25 +61,25 @@ for i in range(top5_prob.size(0)):
 
 Replace the model name with the variant you want to use, e.g. `efficientnet_b1_pruned`. You can find the IDs in the model summaries at the top of this page.
 
-To extract image features with this model, follow the [timm feature extraction examples](https://rwightman.github.io/pytorch-image-models/feature_extraction/), just change the name of the model you want to use.
+To extract image features with this model, follow the [timm_new feature extraction examples](https://rwightman.github.io/pytorch-image-models/feature_extraction/), just change the name of the model you want to use.
 
 ## How do I finetune this model?
 You can finetune any of the pre-trained models just by changing the classifier (the last layer).
 ```python
-model = timm.create_model('efficientnet_b1_pruned', pretrained=True, num_classes=NUM_FINETUNE_CLASSES)
+model = timm_new.create_model('efficientnet_b1_pruned', pretrained=True, num_classes=NUM_FINETUNE_CLASSES)
 ```
-To finetune on your own dataset, you have to write a training loop or adapt [timm's training
+To finetune on your own dataset, you have to write a training loop or adapt [timm_new's training
 script](https://github.com/rwightman/pytorch-image-models/blob/master/train.py) to use your dataset.
 
 ## How do I train this model?
 
-You can follow the [timm recipe scripts](https://rwightman.github.io/pytorch-image-models/scripts/) for training a new model afresh.
+You can follow the [timm_new recipe scripts](https://rwightman.github.io/pytorch-image-models/scripts/) for training a new model afresh.
 
 ## Citation
 
 ```BibTeX
 @misc{tan2020efficientnet,
-      title={EfficientNet: Rethinking Model Scaling for Convolutional Neural Networks}, 
+      title={EfficientNet: Rethinking Model Scaling for Convolutional Neural Networks},
       author={Mingxing Tan and Quoc V. Le},
       year={2020},
       eprint={1905.11946},
@@ -131,7 +131,7 @@ Models:
     Crop Pct: '0.882'
     Image Size: '240'
     Interpolation: bicubic
-  Code: https://github.com/rwightman/pytorch-image-models/blob/a7f95818e44b281137503bcf4b3e3e94d8ffa52f/timm/models/efficientnet.py#L1208
+  Code: https://github.com/rwightman/pytorch-image-models/blob/a7f95818e44b281137503bcf4b3e3e94d8ffa52f/timm_new/models/efficientnet.py#L1208
   Weights: https://imvl-automl-sh.oss-cn-shanghai.aliyuncs.com/darts/hyperml/hyperml/job_45403/outputs/effnetb1_pruned_9ebb3fe6.pth
   Results:
   - Task: Image Classification
@@ -163,7 +163,7 @@ Models:
     Crop Pct: '0.89'
     Image Size: '260'
     Interpolation: bicubic
-  Code: https://github.com/rwightman/pytorch-image-models/blob/a7f95818e44b281137503bcf4b3e3e94d8ffa52f/timm/models/efficientnet.py#L1219
+  Code: https://github.com/rwightman/pytorch-image-models/blob/a7f95818e44b281137503bcf4b3e3e94d8ffa52f/timm_new/models/efficientnet.py#L1219
   Weights: https://imvl-automl-sh.oss-cn-shanghai.aliyuncs.com/darts/hyperml/hyperml/job_45403/outputs/effnetb2_pruned_203f55bc.pth
   Results:
   - Task: Image Classification
@@ -195,7 +195,7 @@ Models:
     Crop Pct: '0.904'
     Image Size: '300'
     Interpolation: bicubic
-  Code: https://github.com/rwightman/pytorch-image-models/blob/a7f95818e44b281137503bcf4b3e3e94d8ffa52f/timm/models/efficientnet.py#L1230
+  Code: https://github.com/rwightman/pytorch-image-models/blob/a7f95818e44b281137503bcf4b3e3e94d8ffa52f/timm_new/models/efficientnet.py#L1230
   Weights: https://imvl-automl-sh.oss-cn-shanghai.aliyuncs.com/darts/hyperml/hyperml/job_45403/outputs/effnetb3_pruned_5abcc29f.pth
   Results:
   - Task: Image Classification

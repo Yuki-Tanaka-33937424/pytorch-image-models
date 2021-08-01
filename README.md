@@ -105,10 +105,10 @@ I'm fortunate to be able to dedicate significant time and money of my own suppor
 * Adabelief optimizer contributed by Juntang Zhuang
 
 ### April 1, 2021
-* Add snazzy `benchmark.py` script for bulk `timm` model benchmarking of train and/or inference
+* Add snazzy `benchmark.py` script for bulk `timm_new` model benchmarking of train and/or inference
 * Add Pooling-based Vision Transformer (PiT) models (from https://github.com/naver-ai/pit)
   * Merged distilled variant into main for torchscript compatibility
-  * Some `timm` cleanup/style tweaks and weights have hub download support
+  * Some `timm_new` cleanup/style tweaks and weights have hub download support
 * Cleanup Vision Transformer (ViT) models
   * Merge distilled (DeiT) model into main so that torchscript can work
   * Support updated weight init (defaults to old still) that closer matches original JAX impl (possibly better training from scratch)
@@ -124,7 +124,7 @@ I'm fortunate to be able to dedicate significant time and money of my own suppor
 * Add new ECA-NFNet-L0 (rename `nfnet_l0c`->`eca_nfnet_l0`) weights trained by myself.
   * 82.6 top-1 @ 288x288, 82.8 @ 320x320, trained at 224x224
   * Uses SiLU activation, approx 2x faster than `dm_nfnet_f0` and 50% faster than `nfnet_f0s` w/ 1/3 param count
-* Integrate [Hugging Face model hub](https://huggingface.co/models) into timm create_model and default_cfg handling for pretrained weight and config sharing (more on this soon!)
+* Integrate [Hugging Face model hub](https://huggingface.co/models) into timm_new create_model and default_cfg handling for pretrained weight and config sharing (more on this soon!)
 * Merge HardCoRe NAS models contributed by https://github.com/yoniaflalo
 * Merge PyTorch trained EfficientNet-EL and pruned ES/EL variants contributed by [DeGirum](https://github.com/DeGirum)
 
@@ -204,7 +204,7 @@ I'm fortunate to be able to dedicate significant time and money of my own suppor
 
 ## Introduction
 
-Py**T**orch **Im**age **M**odels (`timm`) is a collection of image models, layers, utilities, optimizers, schedulers, data-loaders / augmentations, and reference training / validation scripts that aim to pull together a wide variety of SOTA models with ability to reproduce ImageNet training results.
+Py**T**orch **Im**age **M**odels (`timm_new`) is a collection of image models, layers, utilities, optimizers, schedulers, data-loaders / augmentations, and reference training / validation scripts that aim to pull together a wide variety of SOTA models with ability to reproduce ImageNet training results.
 
 The work of many others is present here. I've tried to make sure all source material is acknowledged via links to github, arxiv papers, etc in the README, documentation, and code docstrings. Please let me know if I missed anything.
 
@@ -322,7 +322,7 @@ Several (less common) features that I often utilize in my projects are included.
 * AutoAugment (https://arxiv.org/abs/1805.09501) and RandAugment (https://arxiv.org/abs/1909.13719) ImageNet configurations modeled after impl for EfficientNet training (https://github.com/tensorflow/tpu/blob/master/models/official/efficientnet/autoaugment.py)
 * AugMix w/ JSD loss (https://arxiv.org/abs/1912.02781), JSD w/ clean + augmented mixing support works with AutoAugment and RandAugment as well
 * SplitBachNorm - allows splitting batch norm layers between clean and augmented (auxiliary batch norm) data
-* DropPath aka "Stochastic Depth" (https://arxiv.org/abs/1603.09382) 
+* DropPath aka "Stochastic Depth" (https://arxiv.org/abs/1603.09382)
 * DropBlock (https://arxiv.org/abs/1810.12890)
 * Blur Pooling (https://arxiv.org/abs/1904.11486)
 * Space-to-Depth by [mrT23](https://github.com/mrT23/TResNet/blob/master/src/models/tresnet/layers/space_to_depth.py) (https://arxiv.org/abs/1801.04590) -- original paper?
@@ -349,11 +349,11 @@ Model validation results can be found in the [documentation](https://rwightman.g
 
 ## Getting Started (Documentation)
 
-My current [documentation](https://rwightman.github.io/pytorch-image-models/) for `timm` covers the basics.
+My current [documentation](https://rwightman.github.io/pytorch-image-models/) for `timm_new` covers the basics.
 
-[timmdocs](https://fastai.github.io/timmdocs/) is quickly becoming a much more comprehensive set of documentation for `timm`. A big thanks to [Aman Arora](https://github.com/amaarora) for his efforts creating timmdocs.
+[timm_newdocs](https://fastai.github.io/timm_newdocs/) is quickly becoming a much more comprehensive set of documentation for `timm_new`. A big thanks to [Aman Arora](https://github.com/amaarora) for his efforts creating timm_newdocs.
 
-[paperswithcode](https://paperswithcode.com/lib/timm) is a good resource for browsing the models within `timm`.
+[paperswithcode](https://paperswithcode.com/lib/timm_new) is a good resource for browsing the models within `timm_new`.
 
 ## Train, Validation, Inference Scripts
 
@@ -398,7 +398,7 @@ Several weights included or references here were pretrained with proprietary dat
 ### BibTeX
 
 ```bibtex
-@misc{rw2019timm,
+@misc{rw2019timm_new,
   author = {Ross Wightman},
   title = {PyTorch Image Models},
   year = {2019},

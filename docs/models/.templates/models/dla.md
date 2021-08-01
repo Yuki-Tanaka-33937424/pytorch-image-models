@@ -1,20 +1,20 @@
 # Deep Layer Aggregation
 
-Extending  “shallow” skip connections, **Dense Layer Aggregation (DLA)** incorporates more depth and sharing. The authors introduce two structures for deep layer aggregation (DLA): iterative deep aggregation (IDA) and hierarchical deep aggregation (HDA). These structures are expressed through an architectural framework, independent of the choice of backbone, for compatibility with current and future networks. 
+Extending  “shallow” skip connections, **Dense Layer Aggregation (DLA)** incorporates more depth and sharing. The authors introduce two structures for deep layer aggregation (DLA): iterative deep aggregation (IDA) and hierarchical deep aggregation (HDA). These structures are expressed through an architectural framework, independent of the choice of backbone, for compatibility with current and future networks.
 
-IDA focuses on fusing resolutions and scales while HDA focuses on merging features from all modules and channels. IDA follows the base hierarchy to refine resolution and aggregate scale stage-bystage. HDA assembles its own hierarchy of tree-structured connections that cross and merge stages to aggregate different levels of representation. 
+IDA focuses on fusing resolutions and scales while HDA focuses on merging features from all modules and channels. IDA follows the base hierarchy to refine resolution and aggregate scale stage-bystage. HDA assembles its own hierarchy of tree-structured connections that cross and merge stages to aggregate different levels of representation.
 
 {% include 'code_snippets.md' %}
 
 ## How do I train this model?
 
-You can follow the [timm recipe scripts](https://rwightman.github.io/pytorch-image-models/scripts/) for training a new model afresh.
+You can follow the [timm_new recipe scripts](https://rwightman.github.io/pytorch-image-models/scripts/) for training a new model afresh.
 
 ## Citation
 
 ```BibTeX
 @misc{yu2019deep,
-      title={Deep Layer Aggregation}, 
+      title={Deep Layer Aggregation},
       author={Fisher Yu and Dequan Wang and Evan Shelhamer and Trevor Darrell},
       year={2019},
       eprint={1707.06484},
@@ -67,7 +67,7 @@ Models:
     Image Size: '224'
     Weight Decay: 0.0001
     Interpolation: bilinear
-  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm/models/dla.py#L410
+  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm_new/models/dla.py#L410
   Weights: http://dl.yf.io/dla/models/imagenet/dla102-d94d9790.pth
   Results:
   - Task: Image Classification
@@ -111,7 +111,7 @@ Models:
     Image Size: '224'
     Weight Decay: 0.0001
     Interpolation: bilinear
-  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm/models/dla.py#L418
+  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm_new/models/dla.py#L418
   Weights: http://dl.yf.io/dla/models/imagenet/dla102x-ad62be81.pth
   Results:
   - Task: Image Classification
@@ -155,7 +155,7 @@ Models:
     Image Size: '224'
     Weight Decay: 0.0001
     Interpolation: bilinear
-  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm/models/dla.py#L426
+  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm_new/models/dla.py#L426
   Weights: http://dl.yf.io/dla/models/imagenet/dla102x2-262837b6.pth
   Results:
   - Task: Image Classification
@@ -199,7 +199,7 @@ Models:
     Image Size: '224'
     Weight Decay: 0.0001
     Interpolation: bilinear
-  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm/models/dla.py#L434
+  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm_new/models/dla.py#L434
   Weights: http://dl.yf.io/dla/models/imagenet/dla169-0914e092.pth
   Results:
   - Task: Image Classification
@@ -242,7 +242,7 @@ Models:
     Image Size: '224'
     Weight Decay: 0.0001
     Interpolation: bilinear
-  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm/models/dla.py#L362
+  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm_new/models/dla.py#L362
   Weights: http://dl.yf.io/dla/models/imagenet/dla34-ba72cf86.pth
   Results:
   - Task: Image Classification
@@ -285,7 +285,7 @@ Models:
     Image Size: '224'
     Weight Decay: 0.0001
     Interpolation: bilinear
-  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm/models/dla.py#L369
+  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm_new/models/dla.py#L369
   Weights: http://dl.yf.io/dla/models/imagenet/dla46_c-2bfd52c3.pth
   Results:
   - Task: Image Classification
@@ -328,7 +328,7 @@ Models:
     Image Size: '224'
     Weight Decay: 0.0001
     Interpolation: bilinear
-  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm/models/dla.py#L378
+  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm_new/models/dla.py#L378
   Weights: http://dl.yf.io/dla/models/imagenet/dla46x_c-d761bae7.pth
   Results:
   - Task: Image Classification
@@ -372,7 +372,7 @@ Models:
     Image Size: '224'
     Weight Decay: 0.0001
     Interpolation: bilinear
-  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm/models/dla.py#L394
+  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm_new/models/dla.py#L394
   Weights: http://dl.yf.io/dla/models/imagenet/dla60-24839fc4.pth
   Results:
   - Task: Image Classification
@@ -410,7 +410,7 @@ Models:
     Crop Pct: '0.875'
     Image Size: '224'
     Interpolation: bilinear
-  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm/models/dla.py#L346
+  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm_new/models/dla.py#L346
   Weights: https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-res2net/res2net_dla60_4s-d88db7f9.pth
   Results:
   - Task: Image Classification
@@ -448,7 +448,7 @@ Models:
     Crop Pct: '0.875'
     Image Size: '224'
     Interpolation: bilinear
-  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm/models/dla.py#L354
+  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm_new/models/dla.py#L354
   Weights: https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-res2net/res2next_dla60_4s-d327927b.pth
   Results:
   - Task: Image Classification
@@ -491,7 +491,7 @@ Models:
     Image Size: '224'
     Weight Decay: 0.0001
     Interpolation: bilinear
-  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm/models/dla.py#L402
+  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm_new/models/dla.py#L402
   Weights: http://dl.yf.io/dla/models/imagenet/dla60x-d15cacda.pth
   Results:
   - Task: Image Classification
@@ -534,7 +534,7 @@ Models:
     Image Size: '224'
     Weight Decay: 0.0001
     Interpolation: bilinear
-  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm/models/dla.py#L386
+  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm_new/models/dla.py#L386
   Weights: http://dl.yf.io/dla/models/imagenet/dla60x_c-b870c45c.pth
   Results:
   - Task: Image Classification

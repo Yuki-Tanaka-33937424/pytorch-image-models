@@ -11,7 +11,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-from timm.data import IMAGENET_DEFAULT_MEAN, IMAGENET_DEFAULT_STD
+from timm_new.data import IMAGENET_DEFAULT_MEAN, IMAGENET_DEFAULT_STD
 from .helpers import build_model_with_cfg, overlay_external_default_cfg
 from .layers import to_2tuple, trunc_normal_, DropPath, PatchEmbed, LayerNorm2d, create_classifier
 from .registry import register_model
@@ -403,7 +403,3 @@ def visformer_small(pretrained=False, **kwargs):
 #         pos_embed=False, spatial_conv='111', conv_init=True, **kwargs)
 #     model.default_cfg = _cfg()
 #     return model
-
-
-
-

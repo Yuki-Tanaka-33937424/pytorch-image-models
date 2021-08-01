@@ -6,7 +6,7 @@ https://arxiv.org/abs/2007.00992
 Adapted from original impl at https://github.com/clovaai/rexnet
 Copyright (c) 2020-present NAVER Corp. MIT license
 
-Changes for timm, feature extraction, and rounded channel variant hacked together by Ross Wightman
+Changes for timm_new, feature extraction, and rounded channel variant hacked together by Ross Wightman
 Copyright 2020 Ross Wightman
 """
 
@@ -14,7 +14,7 @@ import torch.nn as nn
 from functools import partial
 from math import ceil
 
-from timm.data import IMAGENET_DEFAULT_MEAN, IMAGENET_DEFAULT_STD
+from timm_new.data import IMAGENET_DEFAULT_MEAN, IMAGENET_DEFAULT_STD
 from .helpers import build_model_with_cfg
 from .layers import ClassifierHead, create_act_layer, ConvBnAct, DropPath, make_divisible, SEModule
 from .registry import register_model

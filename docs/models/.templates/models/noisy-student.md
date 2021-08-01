@@ -1,11 +1,11 @@
 # Noisy Student (EfficientNet)
 
 **Noisy Student Training** is a semi-supervised learning approach. It extends the idea of self-training
-and distillation with the use of equal-or-larger student models and noise added to the student during learning. It has three main steps: 
+and distillation with the use of equal-or-larger student models and noise added to the student during learning. It has three main steps:
 
 1. train a teacher model on labeled images
 2. use the teacher to generate pseudo labels on unlabeled images
-3. train a student model on the combination of labeled images and pseudo labeled images. 
+3. train a student model on the combination of labeled images and pseudo labeled images.
 
 The algorithm is iterated a few times by treating the student as a teacher to relabel the unlabeled data and training a new student.
 
@@ -15,13 +15,13 @@ Noisy Student Training seeks to improve on self-training and distillation in two
 
 ## How do I train this model?
 
-You can follow the [timm recipe scripts](https://rwightman.github.io/pytorch-image-models/scripts/) for training a new model afresh.
+You can follow the [timm_new recipe scripts](https://rwightman.github.io/pytorch-image-models/scripts/) for training a new model afresh.
 
 ## Citation
 
 ```BibTeX
 @misc{xie2020selftraining,
-      title={Self-training with Noisy Student improves ImageNet classification}, 
+      title={Self-training with Noisy Student improves ImageNet classification},
       author={Qizhe Xie and Minh-Thang Luong and Eduard Hovy and Quoc V. Le},
       year={2020},
       eprint={1911.04252},
@@ -82,7 +82,7 @@ Models:
     Label Smoothing: 0.1
     BatchNorm Momentum: 0.99
     Stochastic Depth Survival: 0.8
-  Code: https://github.com/rwightman/pytorch-image-models/blob/9a25fdf3ad0414b4d66da443fe60ae0aa14edc84/timm/models/efficientnet.py#L1427
+  Code: https://github.com/rwightman/pytorch-image-models/blob/9a25fdf3ad0414b4d66da443fe60ae0aa14edc84/timm_new/models/efficientnet.py#L1427
   Weights: https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/tf_efficientnet_b0_ns-c0e6a31c.pth
   Results:
   - Task: Image Classification
@@ -134,7 +134,7 @@ Models:
     Label Smoothing: 0.1
     BatchNorm Momentum: 0.99
     Stochastic Depth Survival: 0.8
-  Code: https://github.com/rwightman/pytorch-image-models/blob/9a25fdf3ad0414b4d66da443fe60ae0aa14edc84/timm/models/efficientnet.py#L1437
+  Code: https://github.com/rwightman/pytorch-image-models/blob/9a25fdf3ad0414b4d66da443fe60ae0aa14edc84/timm_new/models/efficientnet.py#L1437
   Weights: https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/tf_efficientnet_b1_ns-99dd0c41.pth
   Results:
   - Task: Image Classification
@@ -186,7 +186,7 @@ Models:
     Label Smoothing: 0.1
     BatchNorm Momentum: 0.99
     Stochastic Depth Survival: 0.8
-  Code: https://github.com/rwightman/pytorch-image-models/blob/9a25fdf3ad0414b4d66da443fe60ae0aa14edc84/timm/models/efficientnet.py#L1447
+  Code: https://github.com/rwightman/pytorch-image-models/blob/9a25fdf3ad0414b4d66da443fe60ae0aa14edc84/timm_new/models/efficientnet.py#L1447
   Weights: https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/tf_efficientnet_b2_ns-00306e48.pth
   Results:
   - Task: Image Classification
@@ -238,7 +238,7 @@ Models:
     Label Smoothing: 0.1
     BatchNorm Momentum: 0.99
     Stochastic Depth Survival: 0.8
-  Code: https://github.com/rwightman/pytorch-image-models/blob/9a25fdf3ad0414b4d66da443fe60ae0aa14edc84/timm/models/efficientnet.py#L1457
+  Code: https://github.com/rwightman/pytorch-image-models/blob/9a25fdf3ad0414b4d66da443fe60ae0aa14edc84/timm_new/models/efficientnet.py#L1457
   Weights: https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/tf_efficientnet_b3_ns-9d44bf68.pth
   Results:
   - Task: Image Classification
@@ -290,7 +290,7 @@ Models:
     Label Smoothing: 0.1
     BatchNorm Momentum: 0.99
     Stochastic Depth Survival: 0.8
-  Code: https://github.com/rwightman/pytorch-image-models/blob/9a25fdf3ad0414b4d66da443fe60ae0aa14edc84/timm/models/efficientnet.py#L1467
+  Code: https://github.com/rwightman/pytorch-image-models/blob/9a25fdf3ad0414b4d66da443fe60ae0aa14edc84/timm_new/models/efficientnet.py#L1467
   Weights: https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/tf_efficientnet_b4_ns-d6313a46.pth
   Results:
   - Task: Image Classification
@@ -342,7 +342,7 @@ Models:
     Label Smoothing: 0.1
     BatchNorm Momentum: 0.99
     Stochastic Depth Survival: 0.8
-  Code: https://github.com/rwightman/pytorch-image-models/blob/9a25fdf3ad0414b4d66da443fe60ae0aa14edc84/timm/models/efficientnet.py#L1477
+  Code: https://github.com/rwightman/pytorch-image-models/blob/9a25fdf3ad0414b4d66da443fe60ae0aa14edc84/timm_new/models/efficientnet.py#L1477
   Weights: https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/tf_efficientnet_b5_ns-6f26d0cf.pth
   Results:
   - Task: Image Classification
@@ -394,7 +394,7 @@ Models:
     Label Smoothing: 0.1
     BatchNorm Momentum: 0.99
     Stochastic Depth Survival: 0.8
-  Code: https://github.com/rwightman/pytorch-image-models/blob/9a25fdf3ad0414b4d66da443fe60ae0aa14edc84/timm/models/efficientnet.py#L1487
+  Code: https://github.com/rwightman/pytorch-image-models/blob/9a25fdf3ad0414b4d66da443fe60ae0aa14edc84/timm_new/models/efficientnet.py#L1487
   Weights: https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/tf_efficientnet_b6_ns-51548356.pth
   Results:
   - Task: Image Classification
@@ -446,7 +446,7 @@ Models:
     Label Smoothing: 0.1
     BatchNorm Momentum: 0.99
     Stochastic Depth Survival: 0.8
-  Code: https://github.com/rwightman/pytorch-image-models/blob/9a25fdf3ad0414b4d66da443fe60ae0aa14edc84/timm/models/efficientnet.py#L1498
+  Code: https://github.com/rwightman/pytorch-image-models/blob/9a25fdf3ad0414b4d66da443fe60ae0aa14edc84/timm_new/models/efficientnet.py#L1498
   Weights: https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/tf_efficientnet_b7_ns-1dbc32de.pth
   Results:
   - Task: Image Classification
@@ -499,7 +499,7 @@ Models:
     Label Smoothing: 0.1
     BatchNorm Momentum: 0.99
     Stochastic Depth Survival: 0.8
-  Code: https://github.com/rwightman/pytorch-image-models/blob/9a25fdf3ad0414b4d66da443fe60ae0aa14edc84/timm/models/efficientnet.py#L1520
+  Code: https://github.com/rwightman/pytorch-image-models/blob/9a25fdf3ad0414b4d66da443fe60ae0aa14edc84/timm_new/models/efficientnet.py#L1520
   Weights: https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/tf_efficientnet_l2_ns-df73bb44.pth
   Results:
   - Task: Image Classification

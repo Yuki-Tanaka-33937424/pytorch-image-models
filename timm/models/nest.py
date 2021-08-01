@@ -24,7 +24,7 @@ import torch
 import torch.nn.functional as F
 from torch import nn
 
-from timm.data import IMAGENET_DEFAULT_MEAN, IMAGENET_DEFAULT_STD
+from timm_new.data import IMAGENET_DEFAULT_MEAN, IMAGENET_DEFAULT_STD
 from .helpers import build_model_with_cfg, named_apply
 from .layers import PatchEmbed, Mlp, DropPath, create_classifier, trunc_normal_
 from .layers import create_conv2d, create_pool2d, to_ntuple
@@ -77,7 +77,7 @@ class Attention(nn.Module):
     def forward(self, x):
         """
         x is shape: B (batch_size), T (image blocks), N (seq length per image block), C (embed dim)
-        """ 
+        """
         B, T, N, C = x.shape
         # result of next line is (qkv, B, num (H)eads, T, N, (C')hannels per head)
         qkv = self.qkv(x).reshape(B, T, N, 3, self.num_heads, C // self.num_heads).permute(3, 0, 4, 1, 2, 5)
@@ -277,7 +277,7 @@ class Nest(nn.Module):
         # Hint: (img_size // patch_size) gives number of patches along edge of image. sqrt(self.num_blocks[0]) is the
         #  number of blocks along edge of image
         self.block_size = int((img_size // patch_size) // math.sqrt(self.num_blocks[0]))
-        
+
         # Patch embedding
         self.patch_embed = PatchEmbed(
             img_size=img_size, patch_size=patch_size, in_chans=in_chans, embed_dim=embed_dims[0], flatten=False)

@@ -5,13 +5,13 @@
 
 ## How do I train this model?
 
-You can follow the [timm recipe scripts](https://rwightman.github.io/pytorch-image-models/scripts/) for training a new model afresh.
+You can follow the [timm_new recipe scripts](https://rwightman.github.io/pytorch-image-models/scripts/) for training a new model afresh.
 
 ## Citation
 
 ```BibTeX
 @misc{szegedy2016inceptionv4,
-      title={Inception-v4, Inception-ResNet and the Impact of Residual Connections on Learning}, 
+      title={Inception-v4, Inception-ResNet and the Impact of Residual Connections on Learning},
       author={Christian Szegedy and Sergey Ioffe and Vincent Vanhoucke and Alex Alemi},
       year={2016},
       eprint={1602.07261},
@@ -60,7 +60,7 @@ Models:
     Momentum: 0.9
     Image Size: '299'
     Interpolation: bicubic
-  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm/models/inception_v4.py#L313
+  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm_new/models/inception_v4.py#L313
   Weights: https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-cadene/inceptionv4-8e4777a0.pth
   Results:
   - Task: Image Classification

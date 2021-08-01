@@ -15,7 +15,7 @@ from functools import partial
 import torch
 import torch.nn as nn
 
-from timm.data import IMAGENET_DEFAULT_MEAN, IMAGENET_DEFAULT_STD
+from timm_new.data import IMAGENET_DEFAULT_MEAN, IMAGENET_DEFAULT_STD
 from .helpers import build_model_with_cfg
 from .vision_transformer import _cfg, Mlp
 from .registry import register_model
@@ -36,7 +36,7 @@ def _cfg(url='', **kwargs):
 
 default_cfgs = {
     # Patch size 16
-    'xcit_nano_12_p16_224': _cfg(url='https://dl.fbaipublicfiles.com/xcit/xcit_nano_12_p16_224.pth'),  
+    'xcit_nano_12_p16_224': _cfg(url='https://dl.fbaipublicfiles.com/xcit/xcit_nano_12_p16_224.pth'),
     'xcit_nano_12_p16_224_dist': _cfg(url='https://dl.fbaipublicfiles.com/xcit/xcit_nano_12_p16_224_dist.pth'),
     'xcit_nano_12_p16_384_dist': _cfg(
         url='https://dl.fbaipublicfiles.com/xcit/xcit_nano_12_p16_384_dist.pth', input_size=(3, 384, 384)),
@@ -66,7 +66,7 @@ default_cfgs = {
         url='https://dl.fbaipublicfiles.com/xcit/xcit_large_24_p16_384_dist.pth', input_size=(3, 384, 384)),
 
     # Patch size 8
-    'xcit_nano_12_p8_224': _cfg(url='https://dl.fbaipublicfiles.com/xcit/xcit_nano_12_p8_224.pth'),  
+    'xcit_nano_12_p8_224': _cfg(url='https://dl.fbaipublicfiles.com/xcit/xcit_nano_12_p8_224.pth'),
     'xcit_nano_12_p8_224_dist': _cfg(url='https://dl.fbaipublicfiles.com/xcit/xcit_nano_12_p8_224_dist.pth'),
     'xcit_nano_12_p8_384_dist': _cfg(
         url='https://dl.fbaipublicfiles.com/xcit/xcit_nano_12_p8_384_dist.pth', input_size=(3, 384, 384)),
@@ -268,7 +268,7 @@ class XCA(nn.Module):
         # Result of next line is (qkv, B, num (H)eads,  (C')hannels per head, N)
         qkv = self.qkv(x).reshape(B, N, 3, self.num_heads, C // self.num_heads).permute(2, 0, 3, 4, 1)
         q, k, v = qkv[0], qkv[1], qkv[2]  # make torchscript happy (cannot use tensor as tuple)
-        
+
         # Paper section 3.2 l2-Normalization and temperature scaling
         q = torch.nn.functional.normalize(q, dim=-1)
         k = torch.nn.functional.normalize(k, dim=-1)
@@ -316,8 +316,8 @@ class XCABlock(nn.Module):
 
 class XCiT(nn.Module):
     """
-    Based on timm and DeiT code bases
-    https://github.com/rwightman/pytorch-image-models/tree/master/timm
+    Based on timm_new and DeiT code bases
+    https://github.com/rwightman/pytorch-image-models/tree/master/timm_new
     https://github.com/facebookresearch/deit/
     """
 
@@ -440,7 +440,7 @@ class XCiT(nn.Module):
 def checkpoint_filter_fn(state_dict, model):
     if 'model' in state_dict:
         state_dict = state_dict['model']
-    # For consistency with timm's transformer models while being compatible with official weights source we rename
+    # For consistency with timm_new's transformer models while being compatible with official weights source we rename
     # pos_embeder to pos_embed. Also account for use_pos_embed == False
     use_pos_embed = getattr(model, 'pos_embed', None) is not None
     pos_embed_keys = [k for k in state_dict if k.startswith('pos_embed')]
@@ -449,7 +449,7 @@ def checkpoint_filter_fn(state_dict, model):
             state_dict[k.replace('pos_embeder.', 'pos_embed.')] = state_dict.pop(k)
         else:
             del state_dict[k]
-    # timm's implementation of class attention in CaiT is slightly more efficient as it does not compute query vectors
+    # timm_new's implementation of class attention in CaiT is slightly more efficient as it does not compute query vectors
     # for all tokens, just the class token. To use official weights source we must split qkv into q, k, v
     if 'cls_attn_blocks.0.attn.qkv.weight' in state_dict and 'cls_attn_blocks.0.attn.q.weight' in model.state_dict():
         num_ca_blocks = len(model.cls_attn_blocks)

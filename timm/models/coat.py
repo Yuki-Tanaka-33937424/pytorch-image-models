@@ -1,11 +1,11 @@
-""" 
+"""
 CoaT architecture.
 
 Paper: Co-Scale Conv-Attentional Image Transformers - https://arxiv.org/abs/2104.06399
 
 Official CoaT code at: https://github.com/mlpc-ucsd/CoaT
 
-Modified from timm/models/vision_transformer.py
+Modified from timm_new/models/vision_transformer.py
 """
 from copy import deepcopy
 from functools import partial
@@ -15,7 +15,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-from timm.data import IMAGENET_DEFAULT_MEAN, IMAGENET_DEFAULT_STD
+from timm_new.data import IMAGENET_DEFAULT_MEAN, IMAGENET_DEFAULT_STD
 from .helpers import build_model_with_cfg, overlay_external_default_cfg
 from .layers import PatchEmbed, Mlp, DropPath, to_2tuple, trunc_normal_
 from .registry import register_model
@@ -83,8 +83,8 @@ class ConvRelPosEnc(nn.Module):
         elif isinstance(window, dict):
             self.window = window
         else:
-            raise ValueError()            
-        
+            raise ValueError()
+
         self.conv_list = nn.ModuleList()
         self.head_splits = []
         for cur_window, cur_head_split in window.items():
@@ -93,9 +93,9 @@ class ConvRelPosEnc(nn.Module):
             # Ref: https://discuss.pytorch.org/t/how-to-keep-the-shape-of-input-and-output-same-when-dilation-conv/14338
             padding_size = (cur_window + (cur_window - 1) * (dilation - 1)) // 2
             cur_conv = nn.Conv2d(cur_head_split*Ch, cur_head_split*Ch,
-                kernel_size=(cur_window, cur_window), 
+                kernel_size=(cur_window, cur_window),
                 padding=(padding_size, padding_size),
-                dilation=(dilation, dilation),                          
+                dilation=(dilation, dilation),
                 groups=cur_head_split*Ch,
             )
             self.conv_list.append(cur_conv)
@@ -167,13 +167,13 @@ class FactorAtt_ConvRelPosEnc(nn.Module):
 
 
 class ConvPosEnc(nn.Module):
-    """ Convolutional Position Encoding. 
+    """ Convolutional Position Encoding.
         Note: This module is similar to the conditional position encoding in CPVT.
     """
     def __init__(self, dim, k=3):
         super(ConvPosEnc, self).__init__()
-        self.proj = nn.Conv2d(dim, dim, k, 1, k//2, groups=dim) 
-    
+        self.proj = nn.Conv2d(dim, dim, k, 1, k//2, groups=dim)
+
     def forward(self, x, size: Tuple[int, int]):
         B, N, C = x.shape
         H, W = size
@@ -181,7 +181,7 @@ class ConvPosEnc(nn.Module):
 
         # Extract CLS token and image tokens.
         cls_token, img_tokens = x[:, :1], x[:, 1:]  # [B, 1, C], [B, H*W, C]
-        
+
         # Depthwise convolution.
         feat = img_tokens.transpose(1, 2).view(B, C, H, W)
         x = self.proj(feat) + feat
@@ -218,9 +218,9 @@ class SerialBlock(nn.Module):
         x = self.cpe(x, size)
         cur = self.norm1(x)
         cur = self.factoratt_crpe(cur, size)
-        x = x + self.drop_path(cur) 
+        x = x + self.drop_path(cur)
 
-        # MLP. 
+        # MLP.
         cur = self.norm2(x)
         cur = self.mlp(cur)
         x = x + self.drop_path(cur)
@@ -239,15 +239,15 @@ class ParallelBlock(nn.Module):
         self.norm13 = norm_layer(dims[2])
         self.norm14 = norm_layer(dims[3])
         self.factoratt_crpe2 = FactorAtt_ConvRelPosEnc(
-            dims[1], num_heads=num_heads, qkv_bias=qkv_bias, attn_drop=attn_drop, proj_drop=drop, 
+            dims[1], num_heads=num_heads, qkv_bias=qkv_bias, attn_drop=attn_drop, proj_drop=drop,
             shared_crpe=shared_crpes[1]
         )
         self.factoratt_crpe3 = FactorAtt_ConvRelPosEnc(
-            dims[2], num_heads=num_heads, qkv_bias=qkv_bias, attn_drop=attn_drop, proj_drop=drop, 
+            dims[2], num_heads=num_heads, qkv_bias=qkv_bias, attn_drop=attn_drop, proj_drop=drop,
             shared_crpe=shared_crpes[2]
         )
         self.factoratt_crpe4 = FactorAtt_ConvRelPosEnc(
-            dims[3], num_heads=num_heads, qkv_bias=qkv_bias, attn_drop=attn_drop, proj_drop=drop, 
+            dims[3], num_heads=num_heads, qkv_bias=qkv_bias, attn_drop=attn_drop, proj_drop=drop,
             shared_crpe=shared_crpes[3]
         )
         self.drop_path = DropPath(drop_path) if drop_path > 0. else nn.Identity()
@@ -279,12 +279,12 @@ class ParallelBlock(nn.Module):
 
         cls_token = x[:, :1, :]
         img_tokens = x[:, 1:, :]
-        
+
         img_tokens = img_tokens.transpose(1, 2).reshape(B, C, H, W)
         img_tokens = F.interpolate(
             img_tokens, scale_factor=scale_factor, recompute_scale_factor=False, mode='bilinear', align_corners=False)
         img_tokens = img_tokens.reshape(B, C, -1).transpose(1, 2)
-        
+
         out = torch.cat((cls_token, img_tokens), dim=1)
 
         return out
@@ -306,11 +306,11 @@ class ParallelBlock(nn.Module):
         cur2 = cur2 + upsample3_2 + upsample4_2
         cur3 = cur3 + upsample4_3 + downsample2_3
         cur4 = cur4 + downsample3_4 + downsample2_4
-        x2 = x2 + self.drop_path(cur2) 
-        x3 = x3 + self.drop_path(cur3) 
-        x4 = x4 + self.drop_path(cur4) 
+        x2 = x2 + self.drop_path(cur2)
+        x3 = x3 + self.drop_path(cur3)
+        x4 = x4 + self.drop_path(cur4)
 
-        # MLP. 
+        # MLP.
         cur2 = self.norm22(x2)
         cur3 = self.norm23(x3)
         cur4 = self.norm24(x4)
@@ -319,7 +319,7 @@ class ParallelBlock(nn.Module):
         cur4 = self.mlp4(cur4)
         x2 = x2 + self.drop_path(cur2)
         x3 = x3 + self.drop_path(cur3)
-        x4 = x4 + self.drop_path(cur4) 
+        x4 = x4 + self.drop_path(cur4)
 
         return x1, x2, x3, x4
 
@@ -327,7 +327,7 @@ class ParallelBlock(nn.Module):
 class CoaT(nn.Module):
     """ CoaT class. """
     def __init__(
-            self, img_size=224, patch_size=16, in_chans=3, num_classes=1000, embed_dims=(0, 0, 0, 0), 
+            self, img_size=224, patch_size=16, in_chans=3, num_classes=1000, embed_dims=(0, 0, 0, 0),
             serial_depths=(0, 0, 0, 0), parallel_depth=0, num_heads=0, mlp_ratios=(0, 0, 0, 0), qkv_bias=True,
             drop_rate=0., attn_drop_rate=0., drop_path_rate=0., norm_layer=partial(nn.LayerNorm, eps=1e-6),
             return_interm_layers=False, out_features=None, crpe_window=None, **kwargs):
@@ -375,12 +375,12 @@ class CoaT(nn.Module):
         # Disable stochastic depth.
         dpr = drop_path_rate
         assert dpr == 0.0
-        
+
         # Serial blocks 1.
         self.serial_blocks1 = nn.ModuleList([
             SerialBlock(
                 dim=embed_dims[0], num_heads=num_heads, mlp_ratio=mlp_ratios[0], qkv_bias=qkv_bias,
-                drop=drop_rate, attn_drop=attn_drop_rate, drop_path=dpr, norm_layer=norm_layer, 
+                drop=drop_rate, attn_drop=attn_drop_rate, drop_path=dpr, norm_layer=norm_layer,
                 shared_cpe=self.cpe1, shared_crpe=self.crpe1
             )
             for _ in range(serial_depths[0])]
@@ -390,7 +390,7 @@ class CoaT(nn.Module):
         self.serial_blocks2 = nn.ModuleList([
             SerialBlock(
                 dim=embed_dims[1], num_heads=num_heads, mlp_ratio=mlp_ratios[1], qkv_bias=qkv_bias,
-                drop=drop_rate, attn_drop=attn_drop_rate, drop_path=dpr, norm_layer=norm_layer, 
+                drop=drop_rate, attn_drop=attn_drop_rate, drop_path=dpr, norm_layer=norm_layer,
                 shared_cpe=self.cpe2, shared_crpe=self.crpe2
             )
             for _ in range(serial_depths[1])]
@@ -400,7 +400,7 @@ class CoaT(nn.Module):
         self.serial_blocks3 = nn.ModuleList([
             SerialBlock(
                 dim=embed_dims[2], num_heads=num_heads, mlp_ratio=mlp_ratios[2], qkv_bias=qkv_bias,
-                drop=drop_rate, attn_drop=attn_drop_rate, drop_path=dpr, norm_layer=norm_layer, 
+                drop=drop_rate, attn_drop=attn_drop_rate, drop_path=dpr, norm_layer=norm_layer,
                 shared_cpe=self.cpe3, shared_crpe=self.crpe3
             )
             for _ in range(serial_depths[2])]
@@ -410,7 +410,7 @@ class CoaT(nn.Module):
         self.serial_blocks4 = nn.ModuleList([
             SerialBlock(
                 dim=embed_dims[3], num_heads=num_heads, mlp_ratio=mlp_ratios[3], qkv_bias=qkv_bias,
-                drop=drop_rate, attn_drop=attn_drop_rate, drop_path=dpr, norm_layer=norm_layer, 
+                drop=drop_rate, attn_drop=attn_drop_rate, drop_path=dpr, norm_layer=norm_layer,
                 shared_cpe=self.cpe4, shared_crpe=self.crpe4
             )
             for _ in range(serial_depths[3])]
@@ -496,7 +496,7 @@ class CoaT(nn.Module):
             x1 = blk(x1, size=(H1, W1))
         x1_nocls = self.remove_cls(x1)
         x1_nocls = x1_nocls.reshape(B, H1, W1, -1).permute(0, 3, 1, 2).contiguous()
-        
+
         # Serial blocks 2.
         x2 = self.patch_embed2(x1_nocls)
         H2, W2 = self.patch_embed2.grid_size
@@ -528,7 +528,7 @@ class CoaT(nn.Module):
         if self.parallel_blocks is None:
             if not torch.jit.is_scripting() and self.return_interm_layers:
                 # Return intermediate features for down-stream tasks (e.g. Deformable DETR and Detectron2).
-                feat_out = {}   
+                feat_out = {}
                 if 'x1_nocls' in self.out_features:
                     feat_out['x1_nocls'] = x1_nocls
                 if 'x2_nocls' in self.out_features:
@@ -551,7 +551,7 @@ class CoaT(nn.Module):
 
         if not torch.jit.is_scripting() and self.return_interm_layers:
             # Return intermediate features for down-stream tasks (e.g. Deformable DETR and Detectron2).
-            feat_out = {}   
+            feat_out = {}
             if 'x1_nocls' in self.out_features:
                 x1_nocls = self.remove_cls(x1)
                 x1_nocls = x1_nocls.reshape(B, H1, W1, -1).permute(0, 3, 1, 2).contiguous()
@@ -586,7 +586,7 @@ class CoaT(nn.Module):
             return self.forward_features(x)
         else:
             # Return features for classification.
-            x = self.forward_features(x) 
+            x = self.forward_features(x)
             x = self.head(x)
             return x
 

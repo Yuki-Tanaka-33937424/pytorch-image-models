@@ -8,13 +8,13 @@ The weights from this model were ported from [Gluon](https://cv.gluon.ai/model_z
 
 ## How do I train this model?
 
-You can follow the [timm recipe scripts](https://rwightman.github.io/pytorch-image-models/scripts/) for training a new model afresh.
+You can follow the [timm_new recipe scripts](https://rwightman.github.io/pytorch-image-models/scripts/) for training a new model afresh.
 
 ## Citation
 
 ```BibTeX
 @misc{chollet2017xception,
-      title={Xception: Deep Learning with Depthwise Separable Convolutions}, 
+      title={Xception: Deep Learning with Depthwise Separable Convolutions},
       author={François Chollet},
       year={2017},
       eprint={1610.02357},
@@ -55,7 +55,7 @@ Models:
     Crop Pct: '0.903'
     Image Size: '299'
     Interpolation: bicubic
-  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm/models/gluon_xception.py#L241
+  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm_new/models/gluon_xception.py#L241
   Weights: https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/gluon_xception-7015a15c.pth
   Results:
   - Task: Image Classification

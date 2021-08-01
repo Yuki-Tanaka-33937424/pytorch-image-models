@@ -13,7 +13,7 @@ import torch
 import torch.nn as nn
 from functools import partial
 
-from timm.data import IMAGENET_DEFAULT_MEAN, IMAGENET_DEFAULT_STD
+from timm_new.data import IMAGENET_DEFAULT_MEAN, IMAGENET_DEFAULT_STD
 from .helpers import build_model_with_cfg, overlay_external_default_cfg
 from .layers import PatchEmbed, Mlp, DropPath, trunc_normal_
 from .registry import register_model
@@ -72,8 +72,8 @@ default_cfgs = dict(
 
 
 class ClassAttn(nn.Module):
-    # taken from https://github.com/rwightman/pytorch-image-models/blob/master/timm/models/vision_transformer.py
-    # with slight modifications to do CA 
+    # taken from https://github.com/rwightman/pytorch-image-models/blob/master/timm_new/models/vision_transformer.py
+    # with slight modifications to do CA
     def __init__(self, dim, num_heads=8, qkv_bias=False, attn_drop=0., proj_drop=0.):
         super().__init__()
         self.num_heads = num_heads
@@ -107,7 +107,7 @@ class ClassAttn(nn.Module):
 
 
 class LayerScaleBlockClassAttn(nn.Module):
-    # taken from https://github.com/rwightman/pytorch-image-models/blob/master/timm/models/vision_transformer.py
+    # taken from https://github.com/rwightman/pytorch-image-models/blob/master/timm_new/models/vision_transformer.py
     # with slight modifications to add CA and LayerScale
     def __init__(
             self, dim, num_heads, mlp_ratio=4., qkv_bias=False, drop=0., attn_drop=0.,
@@ -132,7 +132,7 @@ class LayerScaleBlockClassAttn(nn.Module):
 
 
 class TalkingHeadAttn(nn.Module):
-    # taken from https://github.com/rwightman/pytorch-image-models/blob/master/timm/models/vision_transformer.py
+    # taken from https://github.com/rwightman/pytorch-image-models/blob/master/timm_new/models/vision_transformer.py
     # with slight modifications to add Talking Heads Attention (https://arxiv.org/pdf/2003.02436v1.pdf)
     def __init__(self, dim, num_heads=8, qkv_bias=False, attn_drop=0., proj_drop=0.):
         super().__init__()
@@ -174,7 +174,7 @@ class TalkingHeadAttn(nn.Module):
 
 
 class LayerScaleBlock(nn.Module):
-    # taken from https://github.com/rwightman/pytorch-image-models/blob/master/timm/models/vision_transformer.py
+    # taken from https://github.com/rwightman/pytorch-image-models/blob/master/timm_new/models/vision_transformer.py
     # with slight modifications to add layerScale
     def __init__(
             self, dim, num_heads, mlp_ratio=4., qkv_bias=False, drop=0., attn_drop=0.,
@@ -198,7 +198,7 @@ class LayerScaleBlock(nn.Module):
 
 
 class Cait(nn.Module):
-    # taken from https://github.com/rwightman/pytorch-image-models/blob/master/timm/models/vision_transformer.py
+    # taken from https://github.com/rwightman/pytorch-image-models/blob/master/timm_new/models/vision_transformer.py
     # with slight modifications to adapt to our cait models
     def __init__(
             self, img_size=224, patch_size=16, in_chans=3, num_classes=1000, embed_dim=768, depth=12,

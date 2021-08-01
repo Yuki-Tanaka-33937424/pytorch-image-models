@@ -5,7 +5,7 @@ import os
 import mxnet as mx
 import gluoncv
 import torch
-from timm import create_model
+from timm_new import create_model
 
 parser = argparse.ArgumentParser(description='Convert from MXNet')
 parser.add_argument('--model', default='all', type=str, metavar='MODEL',
@@ -57,7 +57,7 @@ def convert(mxnet_name, torch_name):
             assert 'running_var' in mn
         if 'running_mean' in tn:
             assert 'running_mean' in mn
-            
+
         torch_tensor = torch.from_numpy(mv.data().asnumpy())
         torch_params[tn] = torch_tensor
 

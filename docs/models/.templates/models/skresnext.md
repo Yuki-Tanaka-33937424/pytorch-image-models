@@ -6,13 +6,13 @@
 
 ## How do I train this model?
 
-You can follow the [timm recipe scripts](https://rwightman.github.io/pytorch-image-models/scripts/) for training a new model afresh.
+You can follow the [timm_new recipe scripts](https://rwightman.github.io/pytorch-image-models/scripts/) for training a new model afresh.
 
 ## Citation
 
 ```BibTeX
 @misc{li2019selective,
-      title={Selective Kernel Networks}, 
+      title={Selective Kernel Networks},
       author={Xiang Li and Wenhai Wang and Xiaolin Hu and Jian Yang},
       year={2019},
       eprint={1903.06586},
@@ -59,7 +59,7 @@ Models:
     Image Size: '224'
     Weight Decay: 0.0001
     Interpolation: bicubic
-  Code: https://github.com/rwightman/pytorch-image-models/blob/a7f95818e44b281137503bcf4b3e3e94d8ffa52f/timm/models/sknet.py#L210
+  Code: https://github.com/rwightman/pytorch-image-models/blob/a7f95818e44b281137503bcf4b3e3e94d8ffa52f/timm_new/models/sknet.py#L210
   Weights: https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/skresnext50_ra-f40e40bf.pth
   Results:
   - Task: Image Classification

@@ -6,13 +6,13 @@ The **Vision Transformer** is a model for image classification that employs a Tr
 
 ## How do I train this model?
 
-You can follow the [timm recipe scripts](https://rwightman.github.io/pytorch-image-models/scripts/) for training a new model afresh.
+You can follow the [timm_new recipe scripts](https://rwightman.github.io/pytorch-image-models/scripts/) for training a new model afresh.
 
 ## Citation
 
 ```BibTeX
 @misc{dosovitskiy2020image,
-      title={An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale}, 
+      title={An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale},
       author={Alexey Dosovitskiy and Lucas Beyer and Alexander Kolesnikov and Dirk Weissenborn and Xiaohua Zhai and Thomas Unterthiner and Mostafa Dehghani and Matthias Minderer and Georg Heigold and Sylvain Gelly and Jakob Uszkoreit and Neil Houlsby},
       year={2020},
       eprint={2010.11929},
@@ -65,7 +65,7 @@ Models:
     Warmup Steps: 10000
     Weight Decay: 0.03
     Interpolation: bicubic
-  Code: https://github.com/rwightman/pytorch-image-models/blob/5f9aff395c224492e9e44248b15f44b5cc095d9c/timm/models/vision_transformer.py#L503
+  Code: https://github.com/rwightman/pytorch-image-models/blob/5f9aff395c224492e9e44248b15f44b5cc095d9c/timm_new/models/vision_transformer.py#L503
   Weights: https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-vitjx/jx_vit_base_p16_224-80ecf9dd.pth
   Results:
   - Task: Image Classification
@@ -106,7 +106,7 @@ Models:
     Image Size: '384'
     Weight Decay: 0.0
     Interpolation: bicubic
-  Code: https://github.com/rwightman/pytorch-image-models/blob/5f9aff395c224492e9e44248b15f44b5cc095d9c/timm/models/vision_transformer.py#L522
+  Code: https://github.com/rwightman/pytorch-image-models/blob/5f9aff395c224492e9e44248b15f44b5cc095d9c/timm_new/models/vision_transformer.py#L522
   Weights: https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-vitjx/jx_vit_base_p16_384-83fb41ba.pth
   Results:
   - Task: Image Classification
@@ -147,7 +147,7 @@ Models:
     Image Size: '384'
     Weight Decay: 0.0
     Interpolation: bicubic
-  Code: https://github.com/rwightman/pytorch-image-models/blob/5f9aff395c224492e9e44248b15f44b5cc095d9c/timm/models/vision_transformer.py#L532
+  Code: https://github.com/rwightman/pytorch-image-models/blob/5f9aff395c224492e9e44248b15f44b5cc095d9c/timm_new/models/vision_transformer.py#L532
   Weights: https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-vitjx/jx_vit_base_p32_384-830016f5.pth
   Results:
   - Task: Image Classification
@@ -188,7 +188,7 @@ Models:
     Image Size: '384'
     Weight Decay: 0.0
     Interpolation: bicubic
-  Code: https://github.com/rwightman/pytorch-image-models/blob/5f9aff395c224492e9e44248b15f44b5cc095d9c/timm/models/vision_transformer.py#L653
+  Code: https://github.com/rwightman/pytorch-image-models/blob/5f9aff395c224492e9e44248b15f44b5cc095d9c/timm_new/models/vision_transformer.py#L653
   Weights: https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-vitjx/jx_vit_base_resnet50_384-9fd3c705.pth
   Results:
   - Task: Image Classification
@@ -229,7 +229,7 @@ Models:
     Image Size: '224'
     Weight Decay: 0.0
     Interpolation: bicubic
-  Code: https://github.com/rwightman/pytorch-image-models/blob/5f9aff395c224492e9e44248b15f44b5cc095d9c/timm/models/vision_transformer.py#L542
+  Code: https://github.com/rwightman/pytorch-image-models/blob/5f9aff395c224492e9e44248b15f44b5cc095d9c/timm_new/models/vision_transformer.py#L542
   Weights: https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-vitjx/jx_vit_large_p16_224-4ee7a4dc.pth
   Results:
   - Task: Image Classification
@@ -270,7 +270,7 @@ Models:
     Image Size: '384'
     Weight Decay: 0.0
     Interpolation: bicubic
-  Code: https://github.com/rwightman/pytorch-image-models/blob/5f9aff395c224492e9e44248b15f44b5cc095d9c/timm/models/vision_transformer.py#L561
+  Code: https://github.com/rwightman/pytorch-image-models/blob/5f9aff395c224492e9e44248b15f44b5cc095d9c/timm_new/models/vision_transformer.py#L561
   Weights: https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-vitjx/jx_vit_large_p16_384-b3be5167.pth
   Results:
   - Task: Image Classification
@@ -308,7 +308,7 @@ Models:
     Crop Pct: '0.9'
     Image Size: '224'
     Interpolation: bicubic
-  Code: https://github.com/rwightman/pytorch-image-models/blob/5f9aff395c224492e9e44248b15f44b5cc095d9c/timm/models/vision_transformer.py#L490
+  Code: https://github.com/rwightman/pytorch-image-models/blob/5f9aff395c224492e9e44248b15f44b5cc095d9c/timm_new/models/vision_transformer.py#L490
   Weights: https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/vit_small_p16_224-15ec54c9.pth
   Results:
   - Task: Image Classification

@@ -10,7 +10,7 @@ def split_model_name(model_name):
         return '', model_split[0]
     else:
         source_name, model_name = model_split
-        assert source_name in ('timm', 'hf_hub')
+        assert source_name in ('timm_new', 'hf_hub')
         return source_name, model_name
 
 

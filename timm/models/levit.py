@@ -21,7 +21,7 @@ Modifications by/coyright Copyright 2021 Ross Wightman
 # All rights reserved.
 
 # Modified from
-# https://github.com/rwightman/pytorch-image-models/blob/master/timm/models/vision_transformer.py
+# https://github.com/rwightman/pytorch-image-models/blob/master/timm_new/models/vision_transformer.py
 # Copyright 2020 Ross Wightman, Apache-2.0 License
 import itertools
 from copy import deepcopy
@@ -31,7 +31,7 @@ from typing import Dict
 import torch
 import torch.nn as nn
 
-from timm.data import IMAGENET_DEFAULT_STD, IMAGENET_DEFAULT_MEAN
+from timm_new.data import IMAGENET_DEFAULT_STD, IMAGENET_DEFAULT_MEAN
 from .helpers import build_model_with_cfg, overlay_external_default_cfg
 from .layers import to_ntuple, get_act_layer
 from .vision_transformer import trunc_normal_
@@ -560,4 +560,3 @@ def create_levit(variant, pretrained=False, default_cfg=None, fuse=False, **kwar
     #if fuse:
     #    utils.replace_batchnorm(model)
     return model
-

@@ -8,17 +8,17 @@ The weights from this model were ported from [Tensorflow/TPU](https://github.com
 To load a pretrained model:
 
 ```python
-import timm
-model = timm.create_model('tf_efficientnet_b0_ap', pretrained=True)
+import timm_new
+model = timm_new.create_model('tf_efficientnet_b0_ap', pretrained=True)
 model.eval()
 ```
 
 To load and preprocess the image:
-```python 
+```python
 import urllib
 from PIL import Image
-from timm.data import resolve_data_config
-from timm.data.transforms_factory import create_transform
+from timm_new.data import resolve_data_config
+from timm_new.data.transforms_factory import create_transform
 
 config = resolve_data_config({}, model=model)
 transform = create_transform(**config)
@@ -43,7 +43,7 @@ To get the top-5 predictions class names:
 ```python
 # Get imagenet class mappings
 url, filename = ("https://raw.githubusercontent.com/pytorch/hub/master/imagenet_classes.txt", "imagenet_classes.txt")
-urllib.request.urlretrieve(url, filename) 
+urllib.request.urlretrieve(url, filename)
 with open("imagenet_classes.txt", "r") as f:
     categories = [s.strip() for s in f.readlines()]
 
@@ -57,25 +57,25 @@ for i in range(top5_prob.size(0)):
 
 Replace the model name with the variant you want to use, e.g. `tf_efficientnet_b0_ap`. You can find the IDs in the model summaries at the top of this page.
 
-To extract image features with this model, follow the [timm feature extraction examples](https://rwightman.github.io/pytorch-image-models/feature_extraction/), just change the name of the model you want to use.
+To extract image features with this model, follow the [timm_new feature extraction examples](https://rwightman.github.io/pytorch-image-models/feature_extraction/), just change the name of the model you want to use.
 
 ## How do I finetune this model?
 You can finetune any of the pre-trained models just by changing the classifier (the last layer).
 ```python
-model = timm.create_model('tf_efficientnet_b0_ap', pretrained=True, num_classes=NUM_FINETUNE_CLASSES)
+model = timm_new.create_model('tf_efficientnet_b0_ap', pretrained=True, num_classes=NUM_FINETUNE_CLASSES)
 ```
-To finetune on your own dataset, you have to write a training loop or adapt [timm's training
+To finetune on your own dataset, you have to write a training loop or adapt [timm_new's training
 script](https://github.com/rwightman/pytorch-image-models/blob/master/train.py) to use your dataset.
 
 ## How do I train this model?
 
-You can follow the [timm recipe scripts](https://rwightman.github.io/pytorch-image-models/scripts/) for training a new model afresh.
+You can follow the [timm_new recipe scripts](https://rwightman.github.io/pytorch-image-models/scripts/) for training a new model afresh.
 
 ## Citation
 
 ```BibTeX
 @misc{xie2020adversarial,
-      title={Adversarial Examples Improve Image Recognition}, 
+      title={Adversarial Examples Improve Image Recognition},
       author={Cihang Xie and Mingxing Tan and Boqing Gong and Jiang Wang and Alan Yuille and Quoc V. Le},
       year={2020},
       eprint={1911.09665},
@@ -131,7 +131,7 @@ Models:
     RMSProp Decay: 0.9
     Label Smoothing: 0.1
     BatchNorm Momentum: 0.99
-  Code: https://github.com/rwightman/pytorch-image-models/blob/9a25fdf3ad0414b4d66da443fe60ae0aa14edc84/timm/models/efficientnet.py#L1334
+  Code: https://github.com/rwightman/pytorch-image-models/blob/9a25fdf3ad0414b4d66da443fe60ae0aa14edc84/timm_new/models/efficientnet.py#L1334
   Weights: https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/tf_efficientnet_b0_ap-f262efe1.pth
   Results:
   - Task: Image Classification
@@ -178,7 +178,7 @@ Models:
     RMSProp Decay: 0.9
     Label Smoothing: 0.1
     BatchNorm Momentum: 0.99
-  Code: https://github.com/rwightman/pytorch-image-models/blob/9a25fdf3ad0414b4d66da443fe60ae0aa14edc84/timm/models/efficientnet.py#L1344
+  Code: https://github.com/rwightman/pytorch-image-models/blob/9a25fdf3ad0414b4d66da443fe60ae0aa14edc84/timm_new/models/efficientnet.py#L1344
   Weights: https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/tf_efficientnet_b1_ap-44ef0a3d.pth
   Results:
   - Task: Image Classification
@@ -225,7 +225,7 @@ Models:
     RMSProp Decay: 0.9
     Label Smoothing: 0.1
     BatchNorm Momentum: 0.99
-  Code: https://github.com/rwightman/pytorch-image-models/blob/9a25fdf3ad0414b4d66da443fe60ae0aa14edc84/timm/models/efficientnet.py#L1354
+  Code: https://github.com/rwightman/pytorch-image-models/blob/9a25fdf3ad0414b4d66da443fe60ae0aa14edc84/timm_new/models/efficientnet.py#L1354
   Weights: https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/tf_efficientnet_b2_ap-2f8e7636.pth
   Results:
   - Task: Image Classification
@@ -272,7 +272,7 @@ Models:
     RMSProp Decay: 0.9
     Label Smoothing: 0.1
     BatchNorm Momentum: 0.99
-  Code: https://github.com/rwightman/pytorch-image-models/blob/9a25fdf3ad0414b4d66da443fe60ae0aa14edc84/timm/models/efficientnet.py#L1364
+  Code: https://github.com/rwightman/pytorch-image-models/blob/9a25fdf3ad0414b4d66da443fe60ae0aa14edc84/timm_new/models/efficientnet.py#L1364
   Weights: https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/tf_efficientnet_b3_ap-aad25bdd.pth
   Results:
   - Task: Image Classification
@@ -319,7 +319,7 @@ Models:
     RMSProp Decay: 0.9
     Label Smoothing: 0.1
     BatchNorm Momentum: 0.99
-  Code: https://github.com/rwightman/pytorch-image-models/blob/9a25fdf3ad0414b4d66da443fe60ae0aa14edc84/timm/models/efficientnet.py#L1374
+  Code: https://github.com/rwightman/pytorch-image-models/blob/9a25fdf3ad0414b4d66da443fe60ae0aa14edc84/timm_new/models/efficientnet.py#L1374
   Weights: https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/tf_efficientnet_b4_ap-dedb23e6.pth
   Results:
   - Task: Image Classification
@@ -366,7 +366,7 @@ Models:
     RMSProp Decay: 0.9
     Label Smoothing: 0.1
     BatchNorm Momentum: 0.99
-  Code: https://github.com/rwightman/pytorch-image-models/blob/9a25fdf3ad0414b4d66da443fe60ae0aa14edc84/timm/models/efficientnet.py#L1384
+  Code: https://github.com/rwightman/pytorch-image-models/blob/9a25fdf3ad0414b4d66da443fe60ae0aa14edc84/timm_new/models/efficientnet.py#L1384
   Weights: https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/tf_efficientnet_b5_ap-9e82fae8.pth
   Results:
   - Task: Image Classification
@@ -413,7 +413,7 @@ Models:
     RMSProp Decay: 0.9
     Label Smoothing: 0.1
     BatchNorm Momentum: 0.99
-  Code: https://github.com/rwightman/pytorch-image-models/blob/9a25fdf3ad0414b4d66da443fe60ae0aa14edc84/timm/models/efficientnet.py#L1394
+  Code: https://github.com/rwightman/pytorch-image-models/blob/9a25fdf3ad0414b4d66da443fe60ae0aa14edc84/timm_new/models/efficientnet.py#L1394
   Weights: https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/tf_efficientnet_b6_ap-4ffb161f.pth
   Results:
   - Task: Image Classification
@@ -460,7 +460,7 @@ Models:
     RMSProp Decay: 0.9
     Label Smoothing: 0.1
     BatchNorm Momentum: 0.99
-  Code: https://github.com/rwightman/pytorch-image-models/blob/9a25fdf3ad0414b4d66da443fe60ae0aa14edc84/timm/models/efficientnet.py#L1405
+  Code: https://github.com/rwightman/pytorch-image-models/blob/9a25fdf3ad0414b4d66da443fe60ae0aa14edc84/timm_new/models/efficientnet.py#L1405
   Weights: https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/tf_efficientnet_b7_ap-ddb28fec.pth
   Results:
   - Task: Image Classification
@@ -507,7 +507,7 @@ Models:
     RMSProp Decay: 0.9
     Label Smoothing: 0.1
     BatchNorm Momentum: 0.99
-  Code: https://github.com/rwightman/pytorch-image-models/blob/9a25fdf3ad0414b4d66da443fe60ae0aa14edc84/timm/models/efficientnet.py#L1416
+  Code: https://github.com/rwightman/pytorch-image-models/blob/9a25fdf3ad0414b4d66da443fe60ae0aa14edc84/timm_new/models/efficientnet.py#L1416
   Weights: https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/tf_efficientnet_b8_ap-00e169fa.pth
   Results:
   - Task: Image Classification

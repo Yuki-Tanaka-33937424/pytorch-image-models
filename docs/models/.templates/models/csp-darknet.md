@@ -1,6 +1,6 @@
 # CSP-DarkNet
 
-**CSPDarknet53** is a convolutional neural network and backbone for object detection that uses [DarkNet-53](https://paperswithcode.com/method/darknet-53). It employs a CSPNet strategy to partition the feature map of the base layer into two parts and then merges them through a cross-stage hierarchy. The use of a split and merge strategy allows for more gradient flow through the network. 
+**CSPDarknet53** is a convolutional neural network and backbone for object detection that uses [DarkNet-53](https://paperswithcode.com/method/darknet-53). It employs a CSPNet strategy to partition the feature map of the base layer into two parts and then merges them through a cross-stage hierarchy. The use of a split and merge strategy allows for more gradient flow through the network.
 
 This CNN is used as the backbone for [YOLOv4](https://paperswithcode.com/method/yolov4).
 
@@ -8,13 +8,13 @@ This CNN is used as the backbone for [YOLOv4](https://paperswithcode.com/method/
 
 ## How do I train this model?
 
-You can follow the [timm recipe scripts](https://rwightman.github.io/pytorch-image-models/scripts/) for training a new model afresh.
+You can follow the [timm_new recipe scripts](https://rwightman.github.io/pytorch-image-models/scripts/) for training a new model afresh.
 
 ## Citation
 
 ```BibTeX
 @misc{bochkovskiy2020yolov4,
-      title={YOLOv4: Optimal Speed and Accuracy of Object Detection}, 
+      title={YOLOv4: Optimal Speed and Accuracy of Object Detection},
       author={Alexey Bochkovskiy and Chien-Yao Wang and Hong-Yuan Mark Liao},
       year={2020},
       eprint={2004.10934},
@@ -70,7 +70,7 @@ Models:
     Interpolation: bilinear
     Training Steps: 8000000
     FPS (GPU RTX 2070): 66
-  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm/models/cspnet.py#L441
+  Code: https://github.com/rwightman/pytorch-image-models/blob/d8e69206be253892b2956341fea09fdebfaae4e3/timm_new/models/cspnet.py#L441
   Weights: https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/cspdarknet53_ra_256-d05c7c21.pth
   Results:
   - Task: Image Classification

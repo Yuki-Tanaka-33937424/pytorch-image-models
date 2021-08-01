@@ -45,7 +45,7 @@ from functools import partial
 import torch
 import torch.nn as nn
 
-from timm.data import IMAGENET_DEFAULT_MEAN, IMAGENET_DEFAULT_STD
+from timm_new.data import IMAGENET_DEFAULT_MEAN, IMAGENET_DEFAULT_STD
 from .helpers import build_model_with_cfg, overlay_external_default_cfg, named_apply
 from .layers import PatchEmbed, Mlp, GluMlp, GatedMlp, DropPath, lecun_normal_, to_2tuple
 from .registry import register_model
@@ -84,11 +84,11 @@ default_cfgs = dict(
 
     # Mixer ImageNet-21K-P pretraining
     mixer_b16_224_miil_in21k=_cfg(
-        url='https://miil-public-eu.oss-eu-central-1.aliyuncs.com/model-zoo/ImageNet_21K_P/models/timm/mixer_b16_224_miil_in21k.pth',
+        url='https://miil-public-eu.oss-eu-central-1.aliyuncs.com/model-zoo/ImageNet_21K_P/models/timm_new/mixer_b16_224_miil_in21k.pth',
         mean=(0, 0, 0), std=(1, 1, 1), crop_pct=0.875, interpolation='bilinear', num_classes=11221,
     ),
     mixer_b16_224_miil=_cfg(
-        url='https://miil-public-eu.oss-eu-central-1.aliyuncs.com/model-zoo/ImageNet_21K_P/models/timm/mixer_b16_224_miil.pth',
+        url='https://miil-public-eu.oss-eu-central-1.aliyuncs.com/model-zoo/ImageNet_21K_P/models/timm_new/mixer_b16_224_miil.pth',
         mean=(0, 0, 0), std=(1, 1, 1), crop_pct=0.875, interpolation='bilinear',
     ),
 
@@ -333,7 +333,7 @@ def _init_weights(module: nn.Module, name: str, head_bias: float = 0., flax=Fals
 def checkpoint_filter_fn(state_dict, model):
     """ Remap checkpoints if needed """
     if 'patch_embed.proj.weight' in state_dict:
-        # Remap FB ResMlp models -> timm
+        # Remap FB ResMlp models -> timm_new
         out_dict = {}
         for k, v in state_dict.items():
             k = k.replace('patch_embed.', 'stem.')

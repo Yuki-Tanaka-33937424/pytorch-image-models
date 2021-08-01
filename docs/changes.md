@@ -47,10 +47,10 @@
 * Adabelief optimizer contributed by Juntang Zhuang
 
 ### April 1, 2021
-* Add snazzy `benchmark.py` script for bulk `timm` model benchmarking of train and/or inference
+* Add snazzy `benchmark.py` script for bulk `timm_new` model benchmarking of train and/or inference
 * Add Pooling-based Vision Transformer (PiT) models (from https://github.com/naver-ai/pit)
   * Merged distilled variant into main for torchscript compatibility
-  * Some `timm` cleanup/style tweaks and weights have hub download support
+  * Some `timm_new` cleanup/style tweaks and weights have hub download support
 * Cleanup Vision Transformer (ViT) models
   * Merge distilled (DeiT) model into main so that torchscript can work
   * Support updated weight init (defaults to old still) that closer matches original JAX impl (possibly better training from scratch)

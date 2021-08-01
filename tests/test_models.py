@@ -4,8 +4,8 @@ import platform
 import os
 import fnmatch
 
-import timm
-from timm import list_models, create_model, set_scriptable, has_model_default_key, is_model_default_key, \
+import timm_new
+from timm_new import list_models, create_model, set_scriptable, has_model_default_key, is_model_default_key, \
     get_model_default_value
 
 if hasattr(torch._C, '_jit_set_profiling_executor'):
@@ -25,7 +25,7 @@ if 'GITHUB_ACTIONS' in os.environ:  # and 'Linux' in platform.system():
     # GitHub Linux runner is slower and hits memory limits sooner than MacOS, exclude bigger models
     EXCLUDE_FILTERS = [
         '*efficientnet_l2*', '*resnext101_32x48d', '*in21k', '*152x4_bitm', '*101x3_bitm', '*50x3_bitm',
-        '*nfnet_f3*', '*nfnet_f4*', '*nfnet_f5*', '*nfnet_f6*', '*nfnet_f7*', 
+        '*nfnet_f3*', '*nfnet_f4*', '*nfnet_f5*', '*nfnet_f6*', '*nfnet_f7*',
         '*resnetrs350*', '*resnetrs420*', 'xcit_large_24_p8*']
 else:
     EXCLUDE_FILTERS = []
@@ -143,7 +143,7 @@ def test_model_default_cfgs(model_name, batch_size):
         model.reset_classifier(0, '')  # reset classifier and set global pooling to pass-through
         outputs = model.forward(input_tensor)
         assert len(outputs.shape) == 4
-        if not isinstance(model, timm.models.MobileNetV3) and not isinstance(model, timm.models.GhostNet):
+        if not isinstance(model, timm_new.models.MobileNetV3) and not isinstance(model, timm_new.models.GhostNet):
             # FIXME mobilenetv3/ghostnet forward_features vs removed pooling differ
             assert outputs.shape[-1] == pool_size[-1] and outputs.shape[-2] == pool_size[-2]
 
@@ -152,7 +152,7 @@ def test_model_default_cfgs(model_name, batch_size):
             model = create_model(model_name, pretrained=False, num_classes=0, global_pool='').eval()
             outputs = model.forward(input_tensor)
             assert len(outputs.shape) == 4
-            if not isinstance(model, timm.models.MobileNetV3) and not isinstance(model, timm.models.GhostNet):
+            if not isinstance(model, timm_new.models.MobileNetV3) and not isinstance(model, timm_new.models.GhostNet):
                 # FIXME mobilenetv3/ghostnet forward_features vs removed pooling differ
                 assert outputs.shape[-1] == pool_size[-1] and outputs.shape[-2] == pool_size[-2]
 

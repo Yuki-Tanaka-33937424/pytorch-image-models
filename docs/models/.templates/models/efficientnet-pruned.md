@@ -12,13 +12,13 @@ This collection consists of pruned EfficientNet models.
 
 ## How do I train this model?
 
-You can follow the [timm recipe scripts](https://rwightman.github.io/pytorch-image-models/scripts/) for training a new model afresh.
+You can follow the [timm_new recipe scripts](https://rwightman.github.io/pytorch-image-models/scripts/) for training a new model afresh.
 
 ## Citation
 
 ```BibTeX
 @misc{tan2020efficientnet,
-      title={EfficientNet: Rethinking Model Scaling for Convolutional Neural Networks}, 
+      title={EfficientNet: Rethinking Model Scaling for Convolutional Neural Networks},
       author={Mingxing Tan and Quoc V. Le},
       year={2020},
       eprint={1905.11946},
@@ -70,7 +70,7 @@ Models:
     Crop Pct: '0.882'
     Image Size: '240'
     Interpolation: bicubic
-  Code: https://github.com/rwightman/pytorch-image-models/blob/a7f95818e44b281137503bcf4b3e3e94d8ffa52f/timm/models/efficientnet.py#L1208
+  Code: https://github.com/rwightman/pytorch-image-models/blob/a7f95818e44b281137503bcf4b3e3e94d8ffa52f/timm_new/models/efficientnet.py#L1208
   Weights: https://imvl-automl-sh.oss-cn-shanghai.aliyuncs.com/darts/hyperml/hyperml/job_45403/outputs/effnetb1_pruned_9ebb3fe6.pth
   Results:
   - Task: Image Classification
@@ -102,7 +102,7 @@ Models:
     Crop Pct: '0.89'
     Image Size: '260'
     Interpolation: bicubic
-  Code: https://github.com/rwightman/pytorch-image-models/blob/a7f95818e44b281137503bcf4b3e3e94d8ffa52f/timm/models/efficientnet.py#L1219
+  Code: https://github.com/rwightman/pytorch-image-models/blob/a7f95818e44b281137503bcf4b3e3e94d8ffa52f/timm_new/models/efficientnet.py#L1219
   Weights: https://imvl-automl-sh.oss-cn-shanghai.aliyuncs.com/darts/hyperml/hyperml/job_45403/outputs/effnetb2_pruned_203f55bc.pth
   Results:
   - Task: Image Classification
@@ -134,7 +134,7 @@ Models:
     Crop Pct: '0.904'
     Image Size: '300'
     Interpolation: bicubic
-  Code: https://github.com/rwightman/pytorch-image-models/blob/a7f95818e44b281137503bcf4b3e3e94d8ffa52f/timm/models/efficientnet.py#L1230
+  Code: https://github.com/rwightman/pytorch-image-models/blob/a7f95818e44b281137503bcf4b3e3e94d8ffa52f/timm_new/models/efficientnet.py#L1230
   Weights: https://imvl-automl-sh.oss-cn-shanghai.aliyuncs.com/darts/hyperml/hyperml/job_45403/outputs/effnetb3_pruned_5abcc29f.pth
   Results:
   - Task: Image Classification

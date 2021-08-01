@@ -11,7 +11,7 @@ from collections import OrderedDict
 import torch.nn as nn
 import torch.nn.functional as F
 
-from timm.data import IMAGENET_DEFAULT_MEAN, IMAGENET_DEFAULT_STD
+from timm_new.data import IMAGENET_DEFAULT_MEAN, IMAGENET_DEFAULT_STD
 from .helpers import build_model_with_cfg
 from .layers import create_classifier, get_padding
 from .registry import register_model
@@ -35,9 +35,9 @@ default_cfgs = {
 }
 
 """ PADDING NOTES
-The original PyTorch and Gluon impl of these models dutifully reproduced the 
+The original PyTorch and Gluon impl of these models dutifully reproduced the
 aligned padding added to Tensorflow models for Deeplab. This padding was compensating
-for  Tensorflow 'SAME' padding. PyTorch symmetric padding behaves the way we'd want it to. 
+for  Tensorflow 'SAME' padding. PyTorch symmetric padding behaves the way we'd want it to.
 """
 
 

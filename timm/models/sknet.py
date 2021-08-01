@@ -12,7 +12,7 @@ import math
 
 from torch import nn as nn
 
-from timm.data import IMAGENET_DEFAULT_MEAN, IMAGENET_DEFAULT_STD
+from timm_new.data import IMAGENET_DEFAULT_MEAN, IMAGENET_DEFAULT_STD
 from .helpers import build_model_with_cfg
 from .layers import SelectiveKernel, ConvBnAct, create_attn
 from .registry import register_model
@@ -212,4 +212,3 @@ def skresnext50_32x4d(pretrained=False, **kwargs):
         block=SelectiveKernelBottleneck, layers=[3, 4, 6, 3], cardinality=32, base_width=4,
         block_args=dict(sk_kwargs=sk_kwargs), zero_init_last_bn=False, **kwargs)
     return _create_skresnet('skresnext50_32x4d', pretrained, **model_args)
-

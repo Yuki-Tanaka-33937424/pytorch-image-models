@@ -1,5 +1,5 @@
 """ Transforms Factory
-Factory methods for building image transforms for use with TIMM (PyTorch Image Models)
+Factory methods for building image transforms for use with timm_new (PyTorch Image Models)
 
 Hacked together by / Copyright 2020 Ross Wightman
 """
@@ -8,10 +8,10 @@ import math
 import torch
 from torchvision import transforms
 
-from timm.data.constants import IMAGENET_DEFAULT_MEAN, IMAGENET_DEFAULT_STD, DEFAULT_CROP_PCT
-from timm.data.auto_augment import rand_augment_transform, augment_and_mix_transform, auto_augment_transform
-from timm.data.transforms import _pil_interp, RandomResizedCropAndInterpolation, ToNumpy, ToTensor
-from timm.data.random_erasing import RandomErasing
+from timm_new.data.constants import IMAGENET_DEFAULT_MEAN, IMAGENET_DEFAULT_STD, DEFAULT_CROP_PCT
+from timm_new.data.auto_augment import rand_augment_transform, augment_and_mix_transform, auto_augment_transform
+from timm_new.data.transforms import _pil_interp, RandomResizedCropAndInterpolation, ToNumpy, ToTensor
+from timm_new.data.random_erasing import RandomErasing
 
 
 def transforms_noaug_train(
@@ -193,7 +193,7 @@ def create_transform(
 
     if tf_preprocessing and use_prefetcher:
         assert not separate, "Separate transforms not supported for TF preprocessing"
-        from timm.data.tf_preprocessing import TfPreprocessTransform
+        from timm_new.data.tf_preprocessing import TfPreprocessTransform
         transform = TfPreprocessTransform(
             is_training=is_training, size=img_size, interpolation=interpolation)
     else:

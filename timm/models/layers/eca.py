@@ -6,7 +6,7 @@ https://arxiv.org/abs/1910.03151
 
 Original ECA model borrowed from https://github.com/BangguWu/ECANet
 
-Modified circular ECA implementation and adaption for use in timm package
+Modified circular ECA implementation and adaption for use in timm_new package
 by Chris Ha https://github.com/VRandme
 
 Original License:
@@ -67,7 +67,7 @@ class EcaModule(nn.Module):
         assert kernel_size % 2 == 1
         padding = (kernel_size - 1) // 2
         if use_mlp:
-            # NOTE 'mlp' mode is a timm experiment, not in paper
+            # NOTE 'mlp' mode is a timm_new experiment, not in paper
             assert channels is not None
             if rd_channels is None:
                 rd_channels = make_divisible(channels * rd_ratio, divisor=rd_divisor)

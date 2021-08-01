@@ -6,13 +6,13 @@
 
 ## How do I train this model?
 
-You can follow the [timm recipe scripts](https://rwightman.github.io/pytorch-image-models/scripts/) for training a new model afresh.
+You can follow the [timm_new recipe scripts](https://rwightman.github.io/pytorch-image-models/scripts/) for training a new model afresh.
 
 ## Citation
 
 ```BibTeX
 @misc{han2020rexnet,
-      title={ReXNet: Diminishing Representational Bottleneck on Convolutional Neural Network}, 
+      title={ReXNet: Diminishing Representational Bottleneck on Convolutional Neural Network},
       author={Dongyoon Han and Sangdoo Yun and Byeongho Heo and YoungJoon Yoo},
       year={2020},
       eprint={2007.00992},
@@ -63,7 +63,7 @@ Models:
     Weight Decay: 1.0e-05
     Interpolation: bicubic
     Label Smoothing: 0.1
-  Code: https://github.com/rwightman/pytorch-image-models/blob/b9843f954b0457af2db4f9dea41a8538f51f5d78/timm/models/rexnet.py#L212
+  Code: https://github.com/rwightman/pytorch-image-models/blob/b9843f954b0457af2db4f9dea41a8538f51f5d78/timm_new/models/rexnet.py#L212
   Weights: https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-rexnet/rexnetv1_100-1b4dddf4.pth
   Results:
   - Task: Image Classification
@@ -104,7 +104,7 @@ Models:
     Weight Decay: 1.0e-05
     Interpolation: bicubic
     Label Smoothing: 0.1
-  Code: https://github.com/rwightman/pytorch-image-models/blob/b9843f954b0457af2db4f9dea41a8538f51f5d78/timm/models/rexnet.py#L218
+  Code: https://github.com/rwightman/pytorch-image-models/blob/b9843f954b0457af2db4f9dea41a8538f51f5d78/timm_new/models/rexnet.py#L218
   Weights: https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-rexnet/rexnetv1_130-590d768e.pth
   Results:
   - Task: Image Classification
@@ -145,7 +145,7 @@ Models:
     Weight Decay: 1.0e-05
     Interpolation: bicubic
     Label Smoothing: 0.1
-  Code: https://github.com/rwightman/pytorch-image-models/blob/b9843f954b0457af2db4f9dea41a8538f51f5d78/timm/models/rexnet.py#L224
+  Code: https://github.com/rwightman/pytorch-image-models/blob/b9843f954b0457af2db4f9dea41a8538f51f5d78/timm_new/models/rexnet.py#L224
   Weights: https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-rexnet/rexnetv1_150-bd1a6aa8.pth
   Results:
   - Task: Image Classification
@@ -186,7 +186,7 @@ Models:
     Weight Decay: 1.0e-05
     Interpolation: bicubic
     Label Smoothing: 0.1
-  Code: https://github.com/rwightman/pytorch-image-models/blob/b9843f954b0457af2db4f9dea41a8538f51f5d78/timm/models/rexnet.py#L230
+  Code: https://github.com/rwightman/pytorch-image-models/blob/b9843f954b0457af2db4f9dea41a8538f51f5d78/timm_new/models/rexnet.py#L230
   Weights: https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-rexnet/rexnetv1_200-8c0b7f2d.pth
   Results:
   - Task: Image Classification

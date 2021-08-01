@@ -5,7 +5,7 @@ A PyTorch implement of Pooling-based Vision Transformers as described in
 
 This code was adapted from the original version at https://github.com/naver-ai/pit, original copyright below.
 
-Modifications for timm by / Copyright 2020 Ross Wightman
+Modifications for timm_new by / Copyright 2020 Ross Wightman
 """
 # PiT
 # Copyright 2021-present NAVER Corp.
@@ -20,7 +20,7 @@ from typing import Tuple
 import torch
 from torch import nn
 
-from timm.data import IMAGENET_DEFAULT_MEAN, IMAGENET_DEFAULT_STD
+from timm_new.data import IMAGENET_DEFAULT_MEAN, IMAGENET_DEFAULT_STD
 from .helpers import build_model_with_cfg, overlay_external_default_cfg
 from .layers import trunc_normal_, to_2tuple
 from .registry import register_model

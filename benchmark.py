@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """ Model Benchmark Script
 
-An inference and train step benchmark script for timm models.
+An inference and train step benchmark script for timm_new models.
 
 Hacked together by Ross Wightman (https://github.com/rwightman)
 """
@@ -18,10 +18,10 @@ from collections import OrderedDict
 from contextlib import suppress
 from functools import partial
 
-from timm.models import create_model, is_model, list_models
-from timm.optim import create_optimizer_v2
-from timm.data import resolve_data_config
-from timm.utils import AverageMeter, setup_default_logging
+from timm_new.models import create_model, is_model, list_models
+from timm_new.optim import create_optimizer_v2
+from timm_new.data import resolve_data_config
+from timm_new.utils import AverageMeter, setup_default_logging
 
 
 has_apex = False
